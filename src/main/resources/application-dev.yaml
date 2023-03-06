@@ -1,0 +1,21 @@
+spring:
+  main:
+    banner-mode: off
+
+  datasource:
+    url: jdbc:postgresql://10.10.14.13:5432/credit-service-dev
+    username: creditservice
+    password: creditservice
+
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-master.xml
+app:
+  description: Dev version of credit service
+  version: 0.0.1-SNAPSHOT
+  server:
+    stage: dev
