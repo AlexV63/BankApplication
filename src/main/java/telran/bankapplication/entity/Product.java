@@ -2,6 +2,9 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import telran.bankapplication.entity.enums.AccountType;
+import telran.bankapplication.entity.enums.CurrencyType;
+import telran.bankapplication.entity.enums.ProductStatus;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -29,11 +32,13 @@ public class Product {
     @Column(name = "name", nullable = true, length = 70)
     private String name;
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = true)
-    private Integer status;
+    private ProductStatus status;
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "currency_code", nullable = true)
-    private Integer currencyCode;
+    private CurrencyType currencyCode;
     @Basic
     @Column(name = "interest_rate", nullable = true, precision = 4)
     private BigDecimal interestRate;
@@ -47,7 +52,7 @@ public class Product {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "product")
     private Set<Agreement> agreements = new HashSet<>();
 
     @Override

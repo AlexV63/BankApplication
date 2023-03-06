@@ -2,6 +2,10 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import telran.bankapplication.entity.enums.AccountStatus;
+import telran.bankapplication.entity.enums.AccountType;
+import telran.bankapplication.entity.enums.ClientStatus;
+import telran.bankapplication.entity.enums.CurrencyType;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -15,32 +19,37 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="account")
+@Table(name = "account")
 public class Account {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
-    private UUID id;   //UUID
+    private UUID id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "client_id", nullable = false)
     private Client clientId;
     @Basic
     @Column(name = "name", nullable = true, length = 100)
     private String name;
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = true)
-    private Integer type;
+    private AccountType type;
+
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = true)
-    private Integer status;
+    private AccountStatus status;
+
     @Basic
     @Column(name = "balance", nullable = true, precision = 4)
     private BigDecimal balance;
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "currency_code", nullable = true)
-    private Integer currencyCode;
+    private CurrencyType currencyCode;
     @Basic
     @Column(name = "description", nullable = true, length = 255)
     private String description;
@@ -51,13 +60,13 @@ public class Account {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "account")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "account")
     private Set<Agreement> agreements;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "debitAccount")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "debitAccount")
     private Set<Transaction> debitTransactionList;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "creditAccount")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "creditAccount")
     private Set<Transaction> creditTransactionList;
 
     @Override
@@ -65,11 +74,15 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return type == account.type && status == account.status && Objects.equals(id, account.id) && Objects.equals(clientId, account.clientId) && Objects.equals(name, account.name) && Objects.equals(balance, account.balance) && Objects.equals(currencyCode, account.currencyCode) && Objects.equals(createdAt, account.createdAt) && Objects.equals(updatedAt, account.updatedAt) && Objects.equals(agreements, account.agreements);
+        return type == account.type && status == account.status && Objects.equals(id, account.id)
+                && Objects.equals(clientId, account.clientId) && Objects.equals(name, account.name)
+                && Objects.equals(balance, account.balance) && Objects.equals(currencyCode, account.currencyCode)
+                && Objects.equals(createdAt, account.createdAt) && Objects.equals(updatedAt, account.updatedAt)
+                && Objects.equals(agreements, account.agreements);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, clientId, name, type, status, balance, currencyCode, createdAt, updatedAt, agreements);
+        return Objects.hash(id, clientId);
     }
 }

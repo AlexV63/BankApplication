@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import telran.bankapplication.entity.enums.AccountProductStatus;
+import telran.bankapplication.entity.enums.AccountType;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -23,11 +25,11 @@ public class Agreement {
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "account_id")
     private Account accountId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "product_id", nullable = false)
     private Product productId;
 
@@ -35,8 +37,9 @@ public class Agreement {
     @Column(name = "interest_rate", nullable = true, precision = 4)
     private BigDecimal interestRate;
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = true)
-    private Integer status;
+    private AccountProductStatus status;
     @Basic
     @Column(name = "sum", nullable = true, precision = 2)
     private BigDecimal sum;
@@ -52,11 +55,13 @@ public class Agreement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Agreement agreement = (Agreement) o;
-        return status == agreement.status && id.equals(agreement.id) && accountId.equals(agreement.accountId) && productId.equals(agreement.productId) && interestRate.equals(agreement.interestRate) && sum.equals(agreement.sum) && createdAt.equals(agreement.createdAt) && updatedAt.equals(agreement.updatedAt);
+        return status == agreement.status && id.equals(agreement.id) && accountId.equals(agreement.accountId)
+                && productId.equals(agreement.productId) && interestRate.equals(agreement.interestRate)
+                && sum.equals(agreement.sum) && createdAt.equals(agreement.createdAt) && updatedAt.equals(agreement.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, accountId, productId, interestRate, status, sum, createdAt, updatedAt);
+        return Objects.hash(id, accountId, productId);
     }
 }

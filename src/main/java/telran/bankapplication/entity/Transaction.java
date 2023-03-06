@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import telran.bankapplication.entity.enums.AccountType;
+import telran.bankapplication.entity.enums.TransactionType;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -24,7 +26,7 @@ public class Transaction {
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "debit_account_id", nullable = false)
     private Account debitAccountId;
 
@@ -32,8 +34,9 @@ public class Transaction {
     @JoinColumn(name = "credit_account_id", nullable = false)
     private Account creditAccountId;
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = true)
-    private Integer type;
+    private TransactionType type;
     @Basic
     @Column(name = "amount", nullable = true, precision = 4)
     private BigDecimal amount;
@@ -48,12 +51,14 @@ public class Transaction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transaction that = (Transaction) o;
-        return type == that.type && Objects.equals(id, that.id) && Objects.equals(debitAccountId, that.debitAccountId) && Objects.equals(creditAccountId, that.creditAccountId) && Objects.equals(amount, that.amount) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt);
+        return type == that.type && Objects.equals(id, that.id) && Objects.equals(debitAccountId, that.debitAccountId)
+                && Objects.equals(creditAccountId, that.creditAccountId) && Objects.equals(amount, that.amount)
+                && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, debitAccountId, creditAccountId, type, amount, description, createdAt);
+        return Objects.hash(id, type, amount);
     }
 }
 

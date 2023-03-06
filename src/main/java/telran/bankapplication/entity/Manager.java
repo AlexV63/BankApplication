@@ -2,6 +2,8 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import telran.bankapplication.entity.enums.AccountType;
+import telran.bankapplication.entity.enums.ManagerStatus;
 
 import java.sql.Timestamp;
 import java.util.Arrays;
@@ -28,8 +30,9 @@ public class Manager {
     @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private byte status;
+    private ManagerStatus status;
     @Basic
     @Column(name = "created_at", nullable = false)
     private Timestamp createdAt;
@@ -37,10 +40,11 @@ public class Manager {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "manager")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "manager")
     private Set<Client> clients = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "manager")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "manager")
     private Set<Product> products = new HashSet<>();
+
 }
 

@@ -2,6 +2,7 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import telran.bankapplication.entity.enums.ClientStatus;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -18,12 +19,15 @@ public class Client {
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "manager_id", nullable = false)
     private Manager managerId;
+
     @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = true)
-    private Integer status;
+    private ClientStatus status;
+
     @Basic
     @Column(name = "tax_code", nullable = true, length = 20)
     private String taxCode;
@@ -49,7 +53,7 @@ public class Client {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "client")
     private Set<Account> accountList = new HashSet<>();
 
     @Override
