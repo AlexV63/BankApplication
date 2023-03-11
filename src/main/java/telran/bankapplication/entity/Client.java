@@ -19,9 +19,9 @@ public class Client {
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "manager_id", nullable = false)
-    private Manager managerId;
+    private Manager manager;
 
     @Basic
     @Enumerated(EnumType.STRING)
@@ -61,11 +61,11 @@ public class Client {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return status == client.status && id.equals(client.id) && managerId.equals(client.managerId) && taxCode.equals(client.taxCode) && firstName.equals(client.firstName) && lastName.equals(client.lastName) && email.equals(client.email) && address.equals(client.address) && phone.equals(client.phone) && createdAt.equals(client.createdAt) && updatedAt.equals(client.updatedAt) && accountList.equals(client.accountList);
+        return Objects.equals(id, client.id) && Objects.equals(email, client.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, managerId, status, taxCode, firstName, lastName, email, address, phone, createdAt, updatedAt, accountList);
+        return Objects.hash(id, email);
     }
 }

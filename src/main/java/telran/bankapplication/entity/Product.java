@@ -2,7 +2,6 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import telran.bankapplication.entity.enums.AccountType;
 import telran.bankapplication.entity.enums.CurrencyType;
 import telran.bankapplication.entity.enums.ProductStatus;
 
@@ -26,8 +25,8 @@ public class Product {
     private UUID id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @Column(name = "manager_id")
-    private Manager managerId;
+    @JoinColumn(name = "manager_id")
+    private Manager manager;
     @Basic
     @Column(name = "name", nullable = true, length = 70)
     private String name;
@@ -60,14 +59,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return status == product.status && limites.equals(product.limites) && id.equals(product.id) && managerId.equals(product.managerId)
-                && name.equals(product.name) && currencyCode.equals(product.currencyCode) && interestRate.equals(product.interestRate)
-                && createdAt.equals(product.createdAt) && updatedAt.equals(product.updatedAt) && agreements.equals(product.agreements);
+        return Objects.equals(id, product.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, managerId, name, status, currencyCode, interestRate, limites, createdAt, updatedAt, agreements);
+        return Objects.hash(id);
     }
 }
 

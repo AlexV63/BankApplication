@@ -6,11 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import telran.bankapplication.entity.enums.AccountProductStatus;
-import telran.bankapplication.entity.enums.AccountType;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -26,12 +24,12 @@ public class Agreement {
     @Column(name = "id", nullable = false)
     private UUID id;
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "account_id")
-    private Account accountId;
+    @JoinColumn(name = "account_id", nullable = false)
+    private Account account;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "product_id", nullable = false)
-    private Product productId;
+    private Product product;
 
     @Basic
     @Column(name = "interest_rate", nullable = true, precision = 4)
@@ -55,13 +53,11 @@ public class Agreement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Agreement agreement = (Agreement) o;
-        return status == agreement.status && id.equals(agreement.id) && accountId.equals(agreement.accountId)
-                && productId.equals(agreement.productId) && interestRate.equals(agreement.interestRate)
-                && sum.equals(agreement.sum) && createdAt.equals(agreement.createdAt) && updatedAt.equals(agreement.updatedAt);
+        return Objects.equals(id, agreement.id) && Objects.equals(account, agreement.account);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, accountId, productId);
+        return Objects.hash(id, account);
     }
 }

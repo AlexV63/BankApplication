@@ -5,13 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import telran.bankapplication.entity.enums.AccountType;
 import telran.bankapplication.entity.enums.TransactionType;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -28,11 +25,11 @@ public class Transaction {
     private UUID id;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "debit_account_id", nullable = false)
-    private Account debitAccountId;
+    private Account debitAccount;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "credit_account_id", nullable = false)
-    private Account creditAccountId;
+    private Account creditAccount;
     @Basic
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = true)
@@ -46,19 +43,18 @@ public class Transaction {
     @Basic
     @Column(name = "created_at", nullable = false)
     private Timestamp createdAt;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transaction that = (Transaction) o;
-        return type == that.type && Objects.equals(id, that.id) && Objects.equals(debitAccountId, that.debitAccountId)
-                && Objects.equals(creditAccountId, that.creditAccountId) && Objects.equals(amount, that.amount)
-                && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, type, amount);
+        return Objects.hash(id);
     }
 }
 

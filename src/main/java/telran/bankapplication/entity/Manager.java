@@ -6,10 +6,7 @@ import telran.bankapplication.entity.enums.AccountType;
 import telran.bankapplication.entity.enums.ManagerStatus;
 
 import java.sql.Timestamp;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @ToString
@@ -46,5 +43,17 @@ public class Manager {
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "manager")
     private Set<Product> products = new HashSet<>();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Manager manager = (Manager) o;
+        return Objects.equals(id, manager.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
 
