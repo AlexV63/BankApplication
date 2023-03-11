@@ -34,12 +34,12 @@ public class Account {
     @Column(name = "name", nullable = true, length = 100)
     private String name;
     @Basic
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(name = "type", nullable = true)
     private AccountType type;
 
     @Basic
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.ORDINAL)
     @Column(name = "status", nullable = true)
     private AccountStatus status;
 
