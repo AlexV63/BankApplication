@@ -16,25 +16,23 @@ import java.util.*;
 @AllArgsConstructor
 @Table(name = "manager")
 public class Manager {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
-    @Basic
+
     @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
-    @Basic
     @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
-    @Basic
     @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
+    @Column(name = "status")
     private ManagerStatus status;
-    @Basic
-    @Column(name = "created_at", nullable = false)
+
+    @Column(name = "created_at")
     private Timestamp createdAt;
-    @Basic
-    @Column(name = "updated_at", nullable = false)
+
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "manager")

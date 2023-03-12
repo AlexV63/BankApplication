@@ -19,30 +19,32 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(name="transaction")
 public class Transaction {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private UUID id;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "debit_account_id", nullable = false)
-    private Account debitAccount;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "credit_account_id", nullable = false)
-    private Account creditAccount;
-    @Basic
     @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = true)
     private TransactionType type;
-    @Basic
+
     @Column(name = "amount", nullable = true, precision = 4)
     private BigDecimal amount;
-    @Basic
+
     @Column(name = "description", nullable = true, length = 255)
     private String description;
-    @Basic
-    @Column(name = "created_at", nullable = false)
+
+    @Column(name = "created_at")
     private Timestamp createdAt;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
+    private Account debitAccount;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
+    private Account creditAccount;
+
 
     @Override
     public boolean equals(Object o) {

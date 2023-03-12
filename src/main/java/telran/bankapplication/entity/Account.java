@@ -26,10 +26,6 @@ public class Account {
     @Column(name = "id", nullable = false)
     private UUID id;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "client_id", nullable = false)
-    private Client client;
-
     @Column(name = "name", nullable = true, length = 100)
     private String name;
 
@@ -51,20 +47,23 @@ public class Account {
     @Column(name = "description", nullable = true, length = 255)
     private String description;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private Timestamp createdAt;
 
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "client_id")
+    private Client client;
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "account")
     private Set<Agreement> agreements;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "debitAccount")
-    private Set<Transaction> debitTransactionList;
+    private Set<Transaction> debitList;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "creditAccount")
-    private Set<Transaction> creditTransactionList;
+    private Set<Transaction> creditList;
 
     @Override
     public boolean equals(Object o) {

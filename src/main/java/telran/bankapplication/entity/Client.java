@@ -15,43 +15,42 @@ import java.util.*;
 @AllArgsConstructor
 @Table(name="client")
 public class Client {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "manager_id", nullable = false)
-    private Manager manager;
 
-    @Basic
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = true)
     private ClientStatus status;
 
-    @Basic
     @Column(name = "tax_code", nullable = true, length = 20)
     private String taxCode;
-    @Basic
+
     @Column(name = "first_name", nullable = true, length = 50)
     private String firstName;
-    @Basic
+
     @Column(name = "last_name", nullable = true, length = 50)
     private String lastName;
-    @Basic
+
     @Column(name = "email", nullable = true, length = 60)
     private String email;
-    @Basic
+
     @Column(name = "address", nullable = true, length = 80)
     private String address;
-    @Basic
+
     @Column(name = "phone", nullable = true, length = 20)
     private String phone;
-    @Basic
-    @Column(name = "created_at", nullable = false)
+
+    @Column(name = "created_at")
     private Timestamp createdAt;
-    @Basic
-    @Column(name = "updated_at", nullable = false)
+
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "manager_id")
+    private Manager manager;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "client")
     private Set<Account> accountList = new HashSet<>();
