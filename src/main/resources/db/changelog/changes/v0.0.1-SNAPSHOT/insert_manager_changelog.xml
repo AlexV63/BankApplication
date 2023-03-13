@@ -6,7 +6,7 @@
 
     <changeSet id="insert-managers-data" author="Alexey">
         <insert tableName="manager">
-            <column name="id">1</column>
+            <column name="id">aaaabbbb-0000-9999-8888-777766665555</column>
             <column name="first_name">Hans</column>
             <column name="last_name">Rein</column>
             <column name="status">1</column>
@@ -14,7 +14,7 @@
             <column name="updated_at">2023-03-11 10:00:00</column>
         </insert>
         <insert tableName="manager">
-            <column name="id">2</column>
+            <column name="id">aaaabbbb-0000-9999-8888-777766665556</column>
             <column name="first_name">Armin</column>
             <column name="last_name">Sprogies</column>
             <column name="status">0</column>

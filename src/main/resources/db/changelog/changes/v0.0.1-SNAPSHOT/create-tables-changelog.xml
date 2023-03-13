@@ -6,8 +6,13 @@
 <!--    <includeAll path="db/changelog/changes/v0.0.1-SNAPSHOT"/>-->
 
     <changeSet id="create-manager-table" author="Alexey">
+        <preConditions onFail="CONTINUE" onFailMessage="Table manager exists">
+            <not>
+                <tableExists tableName="manager"/>
+            </not>
+        </preConditions>
         <createTable tableName="manager">
-            <column name="id" type="binary(16)">
+            <column name="id" type="uuid">
                 <constraints primaryKey="true"/>
             </column>
             <column name="first_name" type="varchar(50)"/>
@@ -23,11 +28,16 @@
     </changeSet>
 
     <changeSet id="create-client-table" author="Alexey">
+        <preConditions onFail="CONTINUE" onFailMessage="Table client exists">
+            <not>
+                <tableExists tableName="client"/>
+            </not>
+        </preConditions>
         <createTable tableName="client">
-            <column name="id" type="binary(16)">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="manager_id" type="binary(16)">
+            <column name="manager_id" type="UUID">
                 <constraints nullable="true"/>
             </column>
             <column name="status" type="tinyint(1)"/>
@@ -46,11 +56,16 @@
     </changeSet>
 
     <changeSet id="create_account_table" author="Alexey">
+        <preConditions onFail="CONTINUE" onFailMessage="Table account exists">
+            <not>
+                <tableExists tableName="account"/>
+            </not>
+        </preConditions>
         <createTable tableName="account">
-            <column name="id" type="binary(16)">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="client_id" type="binary(16)">
+            <column name="client_id" type="UUID">
                 <constraints foreignKeyName="fk_client_account" referencedTableName="client"
                              referencedColumnNames="id"/>
             </column>
@@ -66,12 +81,17 @@
 
 
     <changeSet id="create_product_table" author="Alexey">
+        <preConditions onFail="CONTINUE" onFailMessage="Table product exists">
+            <not>
+                <tableExists tableName="product"/>
+            </not>
+        </preConditions>
         <createTable tableName="product">
-            <column name="id" type="binary(16)">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="manager_id" type="binary(16)">
-                <constraints foreignKeyName="true" referencedTableName="manager" referencedColumnNames="id"/>
+            <column name="manager_id" type="UUID">
+                <constraints foreignKeyName="fk_manager_product" referencedTableName="manager" referencedColumnNames="id"/>
             </column>
             <column name="name" type="varchar(70)"/>
             <column name="status" type="tinyint(1)"/>
@@ -86,15 +106,20 @@
     </changeSet>
 
     <changeSet id="create_agreement_table" author="Alexey">
+        <preConditions onFail="CONTINUE" onFailMessage="Table agreement exists">
+            <not>
+                <tableExists tableName="agreement"/>
+            </not>
+        </preConditions>
         <createTable tableName="agreement">
-            <column name="id" type="binary(16)">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="account_id" type="binary(16)">
+            <column name="account_id" type="UUID">
                 <constraints foreignKeyName="fk_agreement_account_id" referencedTableName="account"
                              referencedColumnNames="id"/>
             </column>
-            <column name="product_id" type="binary(16)">
+            <column name="product_id" type="UUID">
                 <constraints foreignKeyName="fk_agreement_product_id" referencedTableName="product"
                              referencedColumnNames="id"/>
             </column>
@@ -110,15 +135,20 @@
 
 
     <changeSet id="create_transaction_table" author="Alexey">
+        <preConditions onFail="CONTINUE" onFailMessage="Table transaction exists">
+            <not>
+                <tableExists tableName="transaction"/>
+            </not>
+        </preConditions>
         <createTable tableName="transaction">
-            <column name="id" type="binary(16)">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="debit_account_id" type="binary(16)">
+            <column name="debit_account_id" type="UUID">
                 <constraints foreignKeyName="fk_debit_account_id" referencedTableName="account"
                              referencedColumnNames="id"/>
             </column>
-            <column name="credit_account_id" type="binary(16)">
+            <column name="credit_account_id" type="UUID">
                 <constraints foreignKeyName="fk_credit_account_id" referencedTableName="account"
                              referencedColumnNames="id"/>
             </column>
