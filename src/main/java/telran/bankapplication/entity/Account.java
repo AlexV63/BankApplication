@@ -2,6 +2,10 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+import telran.bankapplication.entity.enums.AccountStatus;
+import telran.bankapplication.entity.enums.AccountType;
+import telran.bankapplication.entity.enums.CurrencyType;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -15,61 +19,64 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="account")
+@Table(name = "account")
 public class Account {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "telran.bankapplication.generator.UuidTimeSequenceGenerator")
     @Id
     @Column(name = "id", nullable = false)
-    private UUID id;   //UUID
+    private UUID id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "client_id", nullable = false)
-    private Client clientId;
-    @Basic
     @Column(name = "name", nullable = true, length = 100)
     private String name;
-    @Basic
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = true)
-    private Integer type;
-    @Basic
+    private AccountType type;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = true)
-    private Integer status;
-    @Basic
+    private AccountStatus status;
+
     @Column(name = "balance", nullable = true, precision = 4)
     private BigDecimal balance;
-    @Basic
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "currency_code", nullable = true)
-    private Integer currencyCode;
-    @Basic
+    private CurrencyType currencyCode;
+
     @Column(name = "description", nullable = true, length = 255)
     private String description;
-    @Basic
-    @Column(name = "created_at", nullable = false)
+
+    @Column(name = "created_at")
     private Timestamp createdAt;
-    @Basic
-    @Column(name = "updated_at", nullable = false)
+
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "account")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "client_id")
+    private Client client;
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "account")
     private Set<Agreement> agreements;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "debitAccount")
-    private Set<Transaction> debitTransactionList;
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "debitAccount")
+    private Set<Transaction> debitList;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "creditAccount")
-    private Set<Transaction> creditTransactionList;
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "creditAccount")
+    private Set<Transaction> creditList;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return type == account.type && status == account.status && Objects.equals(id, account.id) && Objects.equals(clientId, account.clientId) && Objects.equals(name, account.name) && Objects.equals(balance, account.balance) && Objects.equals(currencyCode, account.currencyCode) && Objects.equals(createdAt, account.createdAt) && Objects.equals(updatedAt, account.updatedAt) && Objects.equals(agreements, account.agreements);
+        return id.equals(account.id) && client.equals(account.client);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, clientId, name, type, status, balance, currencyCode, createdAt, updatedAt, agreements);
+        return Objects.hash(id, client);
     }
 }

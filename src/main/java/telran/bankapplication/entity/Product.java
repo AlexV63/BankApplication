@@ -2,6 +2,8 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import telran.bankapplication.entity.enums.CurrencyType;
+import telran.bankapplication.entity.enums.ProductStatus;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -17,37 +19,40 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name="product")
 public class Product {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @Column(name = "manager_id")
-    private Manager managerId;
-    @Basic
+
     @Column(name = "name", nullable = true, length = 70)
     private String name;
-    @Basic
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = true)
-    private Integer status;
-    @Basic
+    private ProductStatus status;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "currency_code", nullable = true)
-    private Integer currencyCode;
-    @Basic
+    private CurrencyType currencyCode;
+
     @Column(name = "interest_rate", nullable = true, precision = 4)
     private BigDecimal interestRate;
-    @Basic
+
     @Column(name = "limites", nullable = true)
     private Integer limites;
-    @Basic
-    @Column(name = "created_at", nullable = false)
+
+    @Column(name = "created_at")
     private Timestamp createdAt;
-    @Basic
-    @Column(name = "updated_at", nullable = false)
+
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "manager_id")
+    private Manager manager;
+
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "product")
     private Set<Agreement> agreements = new HashSet<>();
 
     @Override
@@ -55,14 +60,12 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return status == product.status && limites.equals(product.limites) && id.equals(product.id) && managerId.equals(product.managerId)
-                && name.equals(product.name) && currencyCode.equals(product.currencyCode) && interestRate.equals(product.interestRate)
-                && createdAt.equals(product.createdAt) && updatedAt.equals(product.updatedAt) && agreements.equals(product.agreements);
+        return Objects.equals(id, product.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, managerId, name, status, currencyCode, interestRate, limites, createdAt, updatedAt, agreements);
+        return Objects.hash(id);
     }
 }
 

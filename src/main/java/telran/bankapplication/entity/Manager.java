@@ -2,12 +2,11 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import telran.bankapplication.entity.enums.AccountType;
+import telran.bankapplication.entity.enums.ManagerStatus;
 
 import java.sql.Timestamp;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Entity
 @ToString
@@ -17,30 +16,42 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name = "manager")
 public class Manager {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
-    @Basic
+
     @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
-    @Basic
     @Column(name = "last_name", nullable = false, length = 50)
     private String lastName;
-    @Basic
-    @Column(name = "status", nullable = false)
-    private byte status;
-    @Basic
-    @Column(name = "created_at", nullable = false)
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private ManagerStatus status;
+
+    @Column(name = "created_at")
     private Timestamp createdAt;
-    @Basic
-    @Column(name = "updated_at", nullable = false)
+
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "manager")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "manager")
     private Set<Client> clients = new HashSet<>();
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "manager")
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "manager")
     private Set<Product> products = new HashSet<>();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Manager manager = (Manager) o;
+        return Objects.equals(id, manager.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
 

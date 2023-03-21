@@ -5,11 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import telran.bankapplication.entity.enums.TransactionType;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -20,40 +19,44 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(name="transaction")
 public class Transaction {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private UUID id;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "debit_account_id", nullable = false)
-    private Account debitAccountId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "credit_account_id", nullable = false)
-    private Account creditAccountId;
-    @Basic
+    @Enumerated(EnumType.STRING)
     @Column(name = "type", nullable = true)
-    private Integer type;
-    @Basic
+    private TransactionType type;
+
     @Column(name = "amount", nullable = true, precision = 4)
     private BigDecimal amount;
-    @Basic
+
     @Column(name = "description", nullable = true, length = 255)
     private String description;
-    @Basic
-    @Column(name = "created_at", nullable = false)
+
+    @Column(name = "created_at")
     private Timestamp createdAt;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "debit_account_id", referencedColumnName = "id")
+    private Account debitAccount;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "credit_account_id", referencedColumnName = "id")
+    private Account creditAccount;
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Transaction that = (Transaction) o;
-        return type == that.type && Objects.equals(id, that.id) && Objects.equals(debitAccountId, that.debitAccountId) && Objects.equals(creditAccountId, that.creditAccountId) && Objects.equals(amount, that.amount) && Objects.equals(description, that.description) && Objects.equals(createdAt, that.createdAt);
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, debitAccountId, creditAccountId, type, amount, description, createdAt);
+        return Objects.hash(id);
     }
 }
 
