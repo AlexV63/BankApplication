@@ -1,17 +1,17 @@
 package telran.bankapplication.entity.enums;
 
 public enum AccountStatus {
-    ACTIVE(1),
-    PENDING(2),
-    BLOCKED(3),
-    REMOVED(4);
-    private final int value;
+    ACTIVE("ACTIVE"),
+    PENDING("PENDING"),
+    BLOCKED("BLOCKED"),
+    REMOVED("REMOVED");
+    private final String value;
 
-    AccountStatus(int value) {
+    AccountStatus(String value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 }

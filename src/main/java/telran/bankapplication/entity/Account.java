@@ -22,8 +22,6 @@ import java.util.UUID;
 @Table(name = "account")
 public class Account {
 
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "telran.bankapplication.generator.UuidTimeSequenceGenerator")
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;

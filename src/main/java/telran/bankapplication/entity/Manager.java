@@ -2,8 +2,8 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import telran.bankapplication.entity.enums.AccountType;
 import telran.bankapplication.entity.enums.ManagerStatus;
+
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -16,7 +16,6 @@ import java.util.*;
 @AllArgsConstructor
 @Table(name = "manager")
 public class Manager {
-    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;

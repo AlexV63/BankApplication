@@ -1,18 +1,16 @@
 package telran.bankapplication.entity.enums;
 
 public enum CurrencyType {
-    EUR(1),
-    USD(2),
-    UAH(3),
-    RUB(4);
+    EUR("EUR"),
+    USD("USD"),
+    UAH("UAH");
+    private final String value;
 
-    private final int value;
-
-    CurrencyType(int value) {
+    CurrencyType(String value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 }

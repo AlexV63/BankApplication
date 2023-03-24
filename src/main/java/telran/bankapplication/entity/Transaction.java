@@ -19,7 +19,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @Table(name="transaction")
 public class Transaction {
-    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
     @Column(name = "id")
     private UUID id;

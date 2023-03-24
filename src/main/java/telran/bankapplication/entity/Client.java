@@ -15,7 +15,6 @@ import java.util.*;
 @AllArgsConstructor
 @Table(name="client")
 public class Client {
-    @GeneratedValue(generator = "UUID", strategy = GenerationType.UUID)
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;

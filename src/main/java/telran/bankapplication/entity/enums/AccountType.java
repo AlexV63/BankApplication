@@ -1,16 +1,16 @@
 package telran.bankapplication.entity.enums;
 
 public enum AccountType {
-    CREDIT(1),
-    DEPOSIT(2),
-    CURRENT(3);
-    private final int value;
+    CREDIT("CREDIT"),
+    DEPOSIT("DEPOSIT"),
+    CURRENT("CURRENT");
+    private final String value;
 
-    AccountType(int value) {
+    AccountType(String value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 }
