@@ -2,9 +2,9 @@ package telran.bankapplication.controller;
 
 import org.junit.jupiter.api.Test;
 
-class ManagerControllerTest {
+class ClientControllerTest {
 
     @Test
-    void getManagerName() {
+    void getClientName() {
     }
 }

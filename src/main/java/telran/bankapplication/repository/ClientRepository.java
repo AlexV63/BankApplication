@@ -11,5 +11,5 @@ import java.util.UUID;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, UUID> {
     @Query("SELECT c from Client c where c.lastName=?1")
-    Optional<Client> findByLastName(String name);
+    Optional<Client> findByName(String name);
 }

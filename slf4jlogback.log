@@ -128,3 +128,34 @@
 28.03.2023 14:35:34.076 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 28.03.2023 14:35:34.078 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
 28.03.2023 14:35:34.084 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+28.03.2023 14:44:57.360 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 54212 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+28.03.2023 14:44:57.362 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+28.03.2023 14:44:57.888 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+28.03.2023 14:44:57.890 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+28.03.2023 14:44:57.917 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+28.03.2023 14:44:57.918 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+28.03.2023 14:44:57.919 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 JDBC repository interfaces.
+28.03.2023 14:44:57.928 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+28.03.2023 14:44:57.928 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28.03.2023 14:44:57.956 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+28.03.2023 14:44:58.319 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+28.03.2023 14:44:58.332 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+28.03.2023 14:44:58.332 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+28.03.2023 14:44:58.415 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+28.03.2023 14:44:58.416 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1009 ms
+28.03.2023 14:44:58.516 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+28.03.2023 14:44:58.748 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@545d2560
+28.03.2023 14:44:58.749 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+28.03.2023 14:44:59.157 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+28.03.2023 14:44:59.164 [main] INFO  liquibase.executor - Changelog query completed.
+28.03.2023 14:44:59.261 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+28.03.2023 14:44:59.298 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+28.03.2023 14:44:59.549 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+28.03.2023 14:45:00.273 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+28.03.2023 14:45:00.285 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28.03.2023 14:45:00.753 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28.03.2023 14:45:01.072 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+28.03.2023 14:45:01.078 [main] INFO  t.b.BankApplication - Started BankApplication in 4.233 seconds (process running for 4.722)
+28.03.2023 14:45:06.725 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+28.03.2023 14:45:06.726 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+28.03.2023 14:45:06.731 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.

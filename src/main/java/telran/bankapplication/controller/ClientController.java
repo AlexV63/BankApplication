@@ -16,7 +16,7 @@ import telran.bankapplication.service.ClientService;
         private final ClientService clientService;
 
         @GetMapping(path = "{name}")
-        public ClientDTO getClientLastName(@PathVariable("name") String name){
-            return clientService.findClientByLastName(name);
+        public ClientDTO getClientName(@PathVariable("name") String name){
+            return clientService.findClientByName(name);
         }
     }
