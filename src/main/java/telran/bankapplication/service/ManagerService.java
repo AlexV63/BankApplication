@@ -13,8 +13,8 @@ public class ManagerService {
     private final ManagerMapper managerMapper;
 
     public ManagerDTO findManagerByName(String name){
-        return managerMapper.toDTO(managerRepository.findByFirstName(name)
-                .orElseThrow(() -> new IllegalStateException("Manager with name: " + name + " doesn't exists in database")));
+        return managerMapper.toDTO(managerRepository.findByName(name)
+                .orElseThrow(() -> new IllegalStateException("Manager with name: " + name + " doesn't exist in database")));
     }
 
 }

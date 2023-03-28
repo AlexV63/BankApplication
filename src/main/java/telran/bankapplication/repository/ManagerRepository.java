@@ -11,5 +11,5 @@ import java.util.UUID;
 @Repository
 public interface ManagerRepository extends JpaRepository<Manager, UUID> {
     @Query("SELECT m from Manager m where m.firstName=?1")
-    Optional<Manager> findByFirstName(String name);
+    Optional<Manager> findByName(String name);
 }

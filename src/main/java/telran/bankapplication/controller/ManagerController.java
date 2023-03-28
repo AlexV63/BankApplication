@@ -9,7 +9,7 @@ import telran.bankapplication.dto.ManagerDTO;
 import telran.bankapplication.service.ManagerService;
 
 @RestController
-@RequestMapping(path="api/v1/managers")
+@RequestMapping(path="api/v1/manager")
 @RequiredArgsConstructor
 public class ManagerController {
     private final ManagerService managerService;
