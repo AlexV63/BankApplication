@@ -2,6 +2,9 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.apache.commons.lang3.builder.ToStringExclude;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import telran.bankapplication.entity.enums.ClientStatus;
 
 import java.sql.Timestamp;
@@ -14,7 +17,7 @@ import java.util.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="client")
-public class Client {
+public class Client implements UserDetails {
     @Id
     @Column(name = "id", nullable = false)
     private UUID id;
@@ -47,12 +50,31 @@ public class Client {
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "locked")
+    private Boolean locked = false;
+
+    @Column(name = "enabled")
+    private Boolean enabled = false;
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "manager_id")
+    @ToString.Exclude
     private Manager manager;
 
     @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "client")
     private Set<Account> accountList = new HashSet<>();
+
+    public Client(String firstName, String lastName, String email, String password) {
+        this.id= UUID.randomUUID();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.status = ClientStatus.PENDING;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -65,5 +87,35 @@ public class Client {
     @Override
     public int hashCode() {
         return Objects.hash(id, email);
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return lastName;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return !locked;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return status == ClientStatus.ACTIVE;
     }
 }

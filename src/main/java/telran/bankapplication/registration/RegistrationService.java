@@ -1,83 +1,76 @@
-package telran.bankapplication.service;
+package telran.bankapplication.registration;
 
-import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.stereotype.Service;
-import telran.bankapplication.dto.ClientDTO;
+import telran.bankapplication.repository.ClientRepository;
+import telran.bankapplication.email.EmailSender;
 import telran.bankapplication.entity.Client;
-import telran.bankapplication.entity.enums.ClientStatus;
-import telran.bankapplication.mapper.ClientMapper;
 import telran.bankapplication.registration.token.ConfirmationToken;
 import telran.bankapplication.registration.token.ConfirmationTokenService;
-import telran.bankapplication.repository.ClientRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import telran.bankapplication.repository.ManagerRepository;
+import telran.bankapplication.service.ClientService;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
-public class ClientService implements UserDetailsService {
-    private final ClientRepository clientRepository;
-    private final ClientMapper clientMapper;
-    private final static String USER_NOT_FOUND_MSG =
-            "user with email %s not found";
-    private final BCryptPasswordEncoder bCryptPasswordEncoder;
+@AllArgsConstructor
+public class RegistrationService {
+
+    private final EmailValidator emailValidator;
+    private final ClientService clientService;
     private final ConfirmationTokenService confirmationTokenService;
+    private final EmailSender emailSender;
+    private final ClientRepository clientRepository;
+    private final ManagerRepository managerRepository;
 
-    public ClientDTO findClientByName(String email){
-        return clientMapper.toDTO(clientRepository.findByEmail(email)
-                .orElseThrow(() -> new IllegalStateException("Client with name: " + email + " doesn't exist in database")));
-    }
-
-    public List<ClientDTO> getClients() {
-        return clientMapper.listToDTO(clientRepository.findAll());
-    }
-
-
-    @Override
-    public UserDetails loadUserByUsername(String email)
-            throws UsernameNotFoundException {
-        return clientRepository.findByEmail(email)
-                .orElseThrow(()-> new UsernameNotFoundException(
-                        String.format(USER_NOT_FOUND_MSG, email))) ;
-    }
-
-    @Transactional
-    public String signUpClient(Client client){
-        Optional<Client> newClient = clientRepository.findByEmail(client.getEmail());
-        if (newClient.isPresent()) {
-            if (newClient.get().getStatus().equals(ClientStatus.ACTIVE)) {
-                throw new IllegalStateException("Client with this email already registered");
-            } else {
-                confirmationTokenService.deleteConfirmationToken(client);
-                ConfirmationToken confirmationToken = new ConfirmationToken(client);
-                confirmationTokenService.saveConfirmationToken(confirmationToken);
-                return confirmationToken.getToken();
-            }
+    public String register(Client request, UUID manager_id) {
+        boolean isValidEmail = emailValidator.test(request.getEmail());
+        if (!isValidEmail) {
+            throw new IllegalStateException("Email not valid");
         }
-        String encodetPassword = bCryptPasswordEncoder.encode(client.getPassword());
-        client.setPassword(encodetPassword);
-        clientRepository.save(client);
+        String token;
+        Optional<Client> existingUser = clientRepository.findByEmail(request.getEmail());
+        if (existingUser.isPresent()) {
+            System.out.println("IF");
+            token = clientService.signUpClient(existingUser.get());
+        } else {
+            System.out.println("ELSE");
+            Client client = new Client(
+                    request.getFirstName(),
+                    request.getLastName(),
+                    request.getEmail(),
+                    request.getPassword()
+            );
+            client.setManager(managerRepository.findById(manager_id)
+                    .orElseThrow(()->new IllegalStateException("Manager not exists")));
 
-        String token = UUID.randomUUID().toString();
-        ConfirmationToken confirmationToken = new ConfirmationToken(client);
-        System.out.println("confirmTOKEN" + confirmationToken);
+            System.out.println(client);
+            System.out.println(request);
+            token = clientService.signUpClient(client);
 
-        confirmationTokenService.saveConfirmationToken(confirmationToken);
-        return confirmationToken.getToken();
+        }
+        String link = "http://localhost:8081/api/v1/registration/confirm?token=" + token;
+        emailSender.send(request.getEmail(), buildEmail(request.getFirstName(), link));
+        return token;
     }
+
     @Transactional
-    public void activeClient(String email) {
-        Client client = clientRepository.findByEmail(email).orElseThrow(() -> new IllegalStateException("Tht client not found"));
-        client.setStatus(ClientStatus.ACTIVE);
-        clientRepository.save(client);
+        public String confirmToken(String token) {
+            ConfirmationToken confirmationToken = confirmationTokenService.getToken(token).orElseThrow(() -> new IllegalStateException("token not found"));
+            if (confirmationToken.getConfirmedAt() !=null){
+                throw new IllegalStateException("email already confirmed");
+        }
+            LocalDateTime expiredAt = confirmationToken.getExpiresAt();
+            if (expiredAt.isBefore(LocalDateTime.now())){
+                throw new IllegalStateException("token expired");
+            }
+
+            confirmationTokenService.setConfirmedAt(token);
+            clientService.enableClient(confirmationToken.getClient().getEmail());
+            return "confirmed";
     }
 
     private String buildEmail(String name, String link) {
@@ -148,12 +141,5 @@ public class ClientService implements UserDetailsService {
                 "\n" +
                 "</div></div>";
     }
-
-    public void enableClient(String email) { clientRepository.enableClient(email);
-    }
-
-
-
-
-
 }
+

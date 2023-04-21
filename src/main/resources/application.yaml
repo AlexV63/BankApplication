@@ -18,6 +18,15 @@ spring:
     hibernate:
       ddl-auto: none
 
+  mail:
+    host: localhost
+    port: 1025
+    username: hello
+    password: hello
+
 
   liquibase:
     change-log: classpath:/db/changelog/changelog-master.xml
+
+server:
+  port: 8081

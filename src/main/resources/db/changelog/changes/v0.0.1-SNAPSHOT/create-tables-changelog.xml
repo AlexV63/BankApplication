@@ -44,11 +44,14 @@
             <column name="first_name" type="varchar(50)"/>
             <column name="last_name" type="varchar(50)"/>
             <column name="email" type="varchar(60)"/>
+            <column name="password" type="varchar(100)"/>
             <column name="address" type="varchar(80)"/>
             <column name="phone" type="varchar(20)"/>
             <column name="created_at" type="timestamp"/>
             <column name="updated_at" type="timestamp"/>
-        </createTable>
+            <column name="locked" type="boolean"/>
+            <column name="enabled" type="boolean"/>
+         </createTable>
         <addForeignKeyConstraint baseTableName="client" baseColumnNames="manager_id"
                                  constraintName="fk_manager_id_client"
                                  referencedTableName="manager" referencedColumnNames="id"/>
@@ -156,6 +159,24 @@
             <column name="description" type="varchar(250)"/>
             <column name="created_at" type="timestamp">
                 <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Alexey" id="create_token_table">
+        <preConditions onFail="CONTINUE" onFailMessage="Table token already exists">
+            <not>
+                <tableExists tableName="token"/>
+            </not>
+        </preConditions>
+        <createTable tableName="token">
+            <column name="id" type="binary(16)"/>
+            <column name="token" type="varchar(150)"/>
+            <column name="created_at" type="timestamp"/>
+            <column name="expires_at" type="timestamp"/>
+            <column name="confirmed_at" type="timestamp"/>
+            <column name="client_id" type="binary(16)">
+                <constraints foreignKeyName="fk_client_id" referencedTableName="client"
+                             referencedColumnNames="id"/>
             </column>
         </createTable>
     </changeSet>

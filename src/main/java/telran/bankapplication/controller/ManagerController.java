@@ -1,10 +1,8 @@
 package telran.bankapplication.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import telran.bankapplication.dto.ManagerDTO;
 import telran.bankapplication.service.ManagerService;
 
@@ -17,5 +15,11 @@ public class ManagerController {
     @GetMapping(path = "{name}")
     public ManagerDTO getManagerName(@PathVariable("name") String name){
         return managerService.findManagerByName(name);
+    }
+
+    @GetMapping("/id/{managerId}")
+    @ResponseStatus(HttpStatus.OK)
+    public ManagerDTO getManagerById(@PathVariable("managerId") String managerId) {
+        return managerService.findManagerById(managerId);
     }
 }

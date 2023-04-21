@@ -29,6 +29,12 @@
         </preConditions>
         <dropTable tableName="account"/>
     </changeSet>
+    <changeSet id="drop-token-table" author="Alexey">
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="token"/>
+        </preConditions>
+        <dropTable tableName="token"/>
+    </changeSet>
     <changeSet id="drop-client-table" author="Alexey">
         <preConditions onFail="MARK_RAN">
             <tableExists tableName="client"/>
@@ -41,5 +47,6 @@
         </preConditions>
         <dropTable tableName="manager"/>
     </changeSet>
+
 
 </databaseChangeLog>

@@ -12,4 +12,7 @@ import java.util.UUID;
 public interface ManagerRepository extends JpaRepository<Manager, UUID> {
     @Query("SELECT m from Manager m where m.firstName=?1")
     Optional<Manager> findByName(String name);
+
+    @Query("SELECT m from Manager m where m.id=?1")
+    Optional<Manager> findById(String UUID);
 }
