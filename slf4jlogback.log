@@ -1,266 +1,106 @@
-21.04.2023 12:14:15.134 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 95740 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
-21.04.2023 12:14:15.138 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
-21.04.2023 12:14:15.979 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-21.04.2023 12:14:15.981 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-21.04.2023 12:14:16.019 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 12:14:16.021 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 12:14:16.023 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 12:14:16.024 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 0 JDBC repository interfaces.
-21.04.2023 12:14:16.034 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-21.04.2023 12:14:16.035 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-21.04.2023 12:14:16.077 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
-21.04.2023 12:14:16.756 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-21.04.2023 12:14:16.766 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
-21.04.2023 12:14:16.767 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
-21.04.2023 12:14:16.871 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
-21.04.2023 12:14:16.871 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1688 ms
-21.04.2023 12:14:17.026 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
-21.04.2023 12:14:17.398 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b1a30e5
-21.04.2023 12:14:17.400 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
-21.04.2023 12:14:17.929 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
-21.04.2023 12:14:17.937 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 12:14:18.066 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-21.04.2023 12:14:18.122 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
-21.04.2023 12:14:18.439 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-21.04.2023 12:14:19.233 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-21.04.2023 12:14:19.242 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-21.04.2023 12:14:19.962 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-21.04.2023 12:14:20.294 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@41d34a11, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a58d00a, org.springframework.security.web.context.SecurityContextHolderFilter@3818609f, org.springframework.security.web.header.HeaderWriterFilter@66008321, org.springframework.security.web.authentication.logout.LogoutFilter@18f6ee8d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@9fe1e14, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@59a71bef, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@53af65eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2b3cbc2c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ec8c874, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ea3f905, org.springframework.security.web.access.ExceptionTranslationFilter@71d37ecd, org.springframework.security.web.access.intercept.AuthorizationFilter@5cb6fac3]
-21.04.2023 12:14:20.727 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-21.04.2023 12:14:20.733 [main] INFO  t.b.BankApplication - Started BankApplication in 6.174 seconds (process running for 7.217)
-21.04.2023 12:14:24.266 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21.04.2023 12:14:24.266 [http-nio-8081-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-21.04.2023 12:14:24.268 [http-nio-8081-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 2 ms
-21.04.2023 12:14:38.109 [http-nio-8081-exec-3] INFO  t.b.a.LoggingAspect - RUN SERVICE:
-SERVICE_METHOD : telran.bankapplication.service.ClientService.signUpClient
-21.04.2023 12:14:38.128 [http-nio-8081-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "telran.bankapplication.entity.enums.ClientStatus.equals(Object)" because the return value of "telran.bankapplication.entity.Client.getStatus()" is null] with root cause
-java.lang.NullPointerException: Cannot invoke "telran.bankapplication.entity.enums.ClientStatus.equals(Object)" because the return value of "telran.bankapplication.entity.Client.getStatus()" is null
-	at telran.bankapplication.service.ClientService.signUpClient(ClientService.java:56)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:58)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:390)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
-	at telran.bankapplication.service.ClientService$$SpringCGLIB$$0.signUpClient(<generated>)
-	at telran.bankapplication.registration.RegistrationService.register(RegistrationService.java:38)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
-	at telran.bankapplication.registration.RegistrationService$$SpringCGLIB$$0.register(<generated>)
-	at telran.bankapplication.registration.RegistrationController.register(RegistrationController.java:21)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
-	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
-	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
-	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:188)
-	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:174)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227)
-	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
-	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:833)
-21.04.2023 12:21:59.861 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-21.04.2023 12:21:59.863 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
-21.04.2023 12:21:59.870 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
-21.04.2023 12:22:08.948 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 49880 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
-21.04.2023 12:22:08.951 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
-21.04.2023 12:22:09.588 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-21.04.2023 12:22:09.589 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-21.04.2023 12:22:09.617 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 12:22:09.619 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 12:22:09.621 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 12:22:09.621 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 0 JDBC repository interfaces.
-21.04.2023 12:22:09.634 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-21.04.2023 12:22:09.635 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-21.04.2023 12:22:09.667 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
-21.04.2023 12:22:10.247 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-21.04.2023 12:22:10.254 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
-21.04.2023 12:22:10.254 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
-21.04.2023 12:22:10.360 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
-21.04.2023 12:22:10.360 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1372 ms
-21.04.2023 12:22:10.501 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
-21.04.2023 12:22:10.735 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69eb544f
-21.04.2023 12:22:10.737 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
-21.04.2023 12:22:11.177 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
-21.04.2023 12:22:11.183 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 12:22:11.295 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-21.04.2023 12:22:11.339 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
-21.04.2023 12:22:11.606 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-21.04.2023 12:22:12.337 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-21.04.2023 12:22:12.345 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-21.04.2023 12:22:13.062 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-21.04.2023 12:22:13.367 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f66ab8f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2746b1cc, org.springframework.security.web.context.SecurityContextHolderFilter@1fd1deed, org.springframework.security.web.header.HeaderWriterFilter@6b5f91a5, org.springframework.security.web.authentication.logout.LogoutFilter@3f04847e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1abacff3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@e822394, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6bcf2780, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@515a897c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2057d8ec, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4bb4adf7, org.springframework.security.web.access.ExceptionTranslationFilter@4ec25389, org.springframework.security.web.access.intercept.AuthorizationFilter@5f92ef40]
-21.04.2023 12:22:13.754 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-21.04.2023 12:22:13.760 [main] INFO  t.b.BankApplication - Started BankApplication in 5.387 seconds (process running for 6.347)
-21.04.2023 12:22:18.901 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21.04.2023 12:22:18.901 [http-nio-8081-exec-2] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-21.04.2023 12:22:18.902 [http-nio-8081-exec-2] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
-21.04.2023 12:22:19.135 [http-nio-8081-exec-2] INFO  t.b.a.LoggingAspect - RUN SERVICE:
-SERVICE_METHOD : telran.bankapplication.service.ClientService.signUpClient
-21.04.2023 12:23:15.398 [http-nio-8081-exec-5] INFO  t.b.a.LoggingAspect - RUN SERVICE:
-SERVICE_METHOD : telran.bankapplication.service.ClientService.enableClient
-21.04.2023 12:41:43.972 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-21.04.2023 12:41:43.974 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
-21.04.2023 12:41:43.979 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
-21.04.2023 13:05:37.497 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 25720 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
-21.04.2023 13:05:37.499 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
-21.04.2023 13:05:38.065 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-21.04.2023 13:05:38.066 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-21.04.2023 13:05:38.096 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 13:05:38.097 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 13:05:38.098 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-21.04.2023 13:05:38.099 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 JDBC repository interfaces.
-21.04.2023 13:05:38.111 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-21.04.2023 13:05:38.112 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-21.04.2023 13:05:38.146 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
-21.04.2023 13:05:38.684 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-21.04.2023 13:05:38.691 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
-21.04.2023 13:05:38.691 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
-21.04.2023 13:05:38.766 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
-21.04.2023 13:05:38.767 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1237 ms
-21.04.2023 13:05:38.890 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
-21.04.2023 13:05:39.127 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4aa3fc9a
-21.04.2023 13:05:39.128 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
-21.04.2023 13:05:39.631 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
-21.04.2023 13:05:39.662 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.668 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.670 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.675 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.678 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.680 [main] INFO  l.lockservice - Successfully acquired change log lock
-21.04.2023 13:05:39.696 [main] INFO  liquibase.changelog - Creating database history table with name: my_db_bank_app.DATABASECHANGELOG
-21.04.2023 13:05:39.714 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.716 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
-21.04.2023 13:05:39.718 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.721 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.730 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
-21.04.2023 13:05:39.737 [main] WARN  liquibase.util - Failed to perform a method call for SnakeYaml because the version of SnakeYaml being used is too old. Consider upgrading to a SnakeYaml version equal to or newer than 1.32, by downloading and installing a newer version of Liquibase (which includes a newer version of SnakeYaml). Loading particularly large JSON and YAML documents (like snapshots) in Liquibase may fail if SnakeYaml is not upgraded.
-java.lang.NoSuchMethodError: 'void org.yaml.snakeyaml.LoaderOptions.setCodePointLimit(int)'
-	at liquibase.util.SnakeYamlUtil.lambda$setCodePointLimitSafely$0(SnakeYamlUtil.java:23)
-	at liquibase.util.SnakeYamlUtil.safelyCallNewSnakeYamlMethod(SnakeYamlUtil.java:39)
-	at liquibase.util.SnakeYamlUtil.setCodePointLimitSafely(SnakeYamlUtil.java:23)
-	at liquibase.parser.core.yaml.YamlParser.createLoaderOptions(YamlParser.java:16)
-	at liquibase.hub.core.HttpClient.<init>(HttpClient.java:49)
-	at liquibase.hub.core.StandardHubService.createHttpClient(StandardHubService.java:41)
-	at liquibase.hub.core.StandardHubService.<init>(StandardHubService.java:37)
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-	at java.base/java.util.ServiceLoader$ProviderImpl.newInstance(ServiceLoader.java:789)
-	at java.base/java.util.ServiceLoader$ProviderImpl.get(ServiceLoader.java:729)
-	at java.base/java.util.ServiceLoader$3.next(ServiceLoader.java:1403)
-	at liquibase.servicelocator.StandardServiceLocator.findInstances(StandardServiceLocator.java:24)
-	at liquibase.plugin.AbstractPluginFactory.findAllInstances(AbstractPluginFactory.java:92)
-	at liquibase.plugin.AbstractPluginFactory.getPlugin(AbstractPluginFactory.java:62)
-	at liquibase.hub.HubServiceFactory.getService(HubServiceFactory.java:30)
-	at liquibase.hub.HubUpdater.<init>(HubUpdater.java:42)
-	at liquibase.Liquibase.lambda$update$1(Liquibase.java:265)
-	at liquibase.Scope.lambda$child$0(Scope.java:187)
-	at liquibase.Scope.child(Scope.java:196)
-	at liquibase.Scope.child(Scope.java:186)
-	at liquibase.Scope.child(Scope.java:165)
-	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
-	at liquibase.Liquibase.update(Liquibase.java:236)
-	at liquibase.Liquibase.update(Liquibase.java:221)
-	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
-	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1798)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1748)
+25.04.2023 20:53:23.499 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 44384 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+25.04.2023 20:53:23.504 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+25.04.2023 20:53:24.442 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 20:53:24.443 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+25.04.2023 20:53:24.479 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 20:53:24.481 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 20:53:24.482 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 20:53:24.483 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 JDBC repository interfaces.
+25.04.2023 20:53:24.491 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 20:53:24.492 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25.04.2023 20:53:24.528 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+25.04.2023 20:53:25.143 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+25.04.2023 20:53:25.155 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+25.04.2023 20:53:25.155 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+25.04.2023 20:53:25.243 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+25.04.2023 20:53:25.243 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1696 ms
+25.04.2023 20:53:25.387 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+25.04.2023 20:53:25.630 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7dd91ffc
+25.04.2023 20:53:25.631 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+25.04.2023 20:53:26.177 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 20:53:26.220 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.230 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.243 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.248 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.252 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.254 [main] INFO  l.lockservice - Successfully acquired change log lock
+25.04.2023 20:53:26.273 [main] INFO  liquibase.changelog - Creating database history table with name: my_db_bank_app.DATABASECHANGELOG
+25.04.2023 20:53:26.288 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.290 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 20:53:26.292 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.297 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.305 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 20:53:26.366 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-agreement-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table my_db_bank_app.agreement does not exist
+
+25.04.2023 20:53:26.369 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.370 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.380 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-product-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table my_db_bank_app.product does not exist
+
+25.04.2023 20:53:26.383 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.392 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-transaction-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table my_db_bank_app.transaction does not exist
+
+25.04.2023 20:53:26.393 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.401 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-account-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table my_db_bank_app.account does not exist
+
+25.04.2023 20:53:26.403 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.411 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-token-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table my_db_bank_app.token does not exist
+
+25.04.2023 20:53:26.412 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.420 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-client-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table my_db_bank_app.client does not exist
+
+25.04.2023 20:53:26.422 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.430 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-manager-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
+          db/changelog/changelog-master.xml : Table my_db_bank_app.manager does not exist
+
+25.04.2023 20:53:26.432 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.453 [main] INFO  liquibase.changelog - Table manager created
+25.04.2023 20:53:26.453 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create-manager-table::Alexey ran successfully in 19ms
+25.04.2023 20:53:26.455 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.503 [main] INFO  liquibase.changelog - Table client created
+25.04.2023 20:53:26.533 [main] INFO  liquibase.changelog - Foreign key constraint added to client (manager_id)
+25.04.2023 20:53:26.535 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create-client-table::Alexey ran successfully in 78ms
+25.04.2023 20:53:26.536 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.562 [main] INFO  liquibase.changelog - Table account created
+25.04.2023 20:53:26.563 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_account_table::Alexey ran successfully in 25ms
+25.04.2023 20:53:26.564 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.590 [main] INFO  liquibase.changelog - Table product created
+25.04.2023 20:53:26.591 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_product_table::Alexey ran successfully in 25ms
+25.04.2023 20:53:26.593 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.626 [main] INFO  liquibase.changelog - Table agreement created
+25.04.2023 20:53:26.626 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_agreement_table::Alexey ran successfully in 31ms
+25.04.2023 20:53:26.627 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.657 [main] INFO  liquibase.changelog - Table transaction created
+25.04.2023 20:53:26.658 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_transaction_table::Alexey ran successfully in 29ms
+25.04.2023 20:53:26.659 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.688 [main] INFO  liquibase.changelog - Table token created
+25.04.2023 20:53:26.689 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_token_table::Alexey ran successfully in 27ms
+25.04.2023 20:53:26.690 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.699 [main] INFO  liquibase.changelog - New row inserted into manager
+25.04.2023 20:53:26.701 [main] INFO  liquibase.changelog - New row inserted into manager
+25.04.2023 20:53:26.703 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-managers-data::Alexey ran successfully in 10ms
+25.04.2023 20:53:26.705 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.712 [main] ERROR liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey encountered an exception.
+25.04.2023 20:53:26.713 [main] INFO  liquibase - Update command encountered an exception.
+25.04.2023 20:53:26.714 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:53:26.716 [main] INFO  l.lockservice - Successfully released change log lock
+25.04.2023 20:53:26.717 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+25.04.2023 20:53:26.717 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+25.04.2023 20:53:26.722 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+25.04.2023 20:53:26.724 [main] INFO  o.a.c.c.StandardService - Stopping service [Tomcat]
+25.04.2023 20:53:26.734 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+25.04.2023 20:53:26.749 [main] ERROR o.s.b.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1752)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
@@ -279,98 +119,496 @@ java.lang.NoSuchMethodError: 'void org.yaml.snakeyaml.LoaderOptions.setCodePoint
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
 	at telran.bankapplication.BankApplication.main(BankApplication.java:10)
-21.04.2023 13:05:39.790 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-agreement-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
-          db/changelog/changelog-master.xml : Table my_db_bank_app.agreement does not exist
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:136)
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:297)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:295)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1748)
+	... 18 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:59)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:75)
+	... 36 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:445)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:160)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1270)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1252)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:702)
+	... 56 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'locked' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:441)
+	... 61 common frames omitted
+25.04.2023 20:59:36.641 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 4644 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+25.04.2023 20:59:36.642 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+25.04.2023 20:59:37.301 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 20:59:37.302 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+25.04.2023 20:59:37.329 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 20:59:37.330 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 20:59:37.331 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 20:59:37.332 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 JDBC repository interfaces.
+25.04.2023 20:59:37.338 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 20:59:37.339 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25.04.2023 20:59:37.367 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+25.04.2023 20:59:37.912 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+25.04.2023 20:59:37.919 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+25.04.2023 20:59:37.919 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+25.04.2023 20:59:38.003 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+25.04.2023 20:59:38.003 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1329 ms
+25.04.2023 20:59:38.145 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+25.04.2023 20:59:38.374 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b4954b2
+25.04.2023 20:59:38.375 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+25.04.2023 20:59:38.774 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 20:59:38.781 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.838 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 20:59:38.849 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.851 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.863 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.866 [main] INFO  l.lockservice - Successfully acquired change log lock
+25.04.2023 20:59:38.901 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.903 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 20:59:38.905 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.908 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.911 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 20:59:38.937 [main] ERROR liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey encountered an exception.
+25.04.2023 20:59:38.938 [main] INFO  liquibase - Update command encountered an exception.
+25.04.2023 20:59:38.939 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 20:59:38.941 [main] INFO  l.lockservice - Successfully released change log lock
+25.04.2023 20:59:38.941 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+25.04.2023 20:59:38.942 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+25.04.2023 20:59:38.947 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+25.04.2023 20:59:38.949 [main] INFO  o.a.c.c.StandardService - Stopping service [Tomcat]
+25.04.2023 20:59:38.958 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
-21.04.2023 13:05:39.792 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.793 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.802 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-product-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
-          db/changelog/changelog-master.xml : Table my_db_bank_app.product does not exist
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+25.04.2023 20:59:38.971 [main] ERROR o.s.b.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1752)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at telran.bankapplication.BankApplication.main(BankApplication.java:10)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:136)
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:297)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:295)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1748)
+	... 18 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:59)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:75)
+	... 36 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'locked' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, `locked`, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'false', 'true')]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:445)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:160)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1270)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1252)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:702)
+	... 56 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'locked' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:441)
+	... 61 common frames omitted
+25.04.2023 21:00:15.415 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 104060 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+25.04.2023 21:00:15.416 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+25.04.2023 21:00:16.048 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:00:16.049 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+25.04.2023 21:00:16.076 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:00:16.078 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:00:16.079 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:00:16.079 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 JDBC repository interfaces.
+25.04.2023 21:00:16.085 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:00:16.086 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25.04.2023 21:00:16.113 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 3 JPA repository interfaces.
+25.04.2023 21:00:16.659 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+25.04.2023 21:00:16.667 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+25.04.2023 21:00:16.668 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+25.04.2023 21:00:16.750 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+25.04.2023 21:00:16.751 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1299 ms
+25.04.2023 21:00:16.901 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+25.04.2023 21:00:17.123 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d84418a
+25.04.2023 21:00:17.125 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+25.04.2023 21:00:17.516 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 21:00:17.522 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.584 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 21:00:17.596 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.598 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.611 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.614 [main] INFO  l.lockservice - Successfully acquired change log lock
+25.04.2023 21:00:17.648 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.651 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 21:00:17.652 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.656 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.659 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 21:00:17.687 [main] ERROR liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey encountered an exception.
+25.04.2023 21:00:17.688 [main] INFO  liquibase - Update command encountered an exception.
+25.04.2023 21:00:17.690 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:00:17.692 [main] INFO  l.lockservice - Successfully released change log lock
+25.04.2023 21:00:17.693 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'enabled' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'true')]
+25.04.2023 21:00:17.694 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+25.04.2023 21:00:17.700 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+25.04.2023 21:00:17.701 [main] INFO  o.a.c.c.StandardService - Stopping service [Tomcat]
+25.04.2023 21:00:17.712 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
-21.04.2023 13:05:39.804 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.812 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-transaction-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
-          db/changelog/changelog-master.xml : Table my_db_bank_app.transaction does not exist
-
-21.04.2023 13:05:39.813 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.821 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-account-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
-          db/changelog/changelog-master.xml : Table my_db_bank_app.account does not exist
-
-21.04.2023 13:05:39.823 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.831 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-token-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
-          db/changelog/changelog-master.xml : Table my_db_bank_app.token does not exist
-
-21.04.2023 13:05:39.834 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.845 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-client-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
-          db/changelog/changelog-master.xml : Table my_db_bank_app.client does not exist
-
-21.04.2023 13:05:39.847 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.861 [main] INFO  liquibase.changelog - Marking ChangeSet: "db/changelog/changes/v0.0.1-SNAPSHOT/drop-tables-changelog.xml::drop-manager-table::Alexey" as ran despite precondition failure due to onFail='MARK_RAN': 
-          db/changelog/changelog-master.xml : Table my_db_bank_app.manager does not exist
-
-21.04.2023 13:05:39.863 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.895 [main] INFO  liquibase.changelog - Table manager created
-21.04.2023 13:05:39.896 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create-manager-table::Alexey ran successfully in 29ms
-21.04.2023 13:05:39.897 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.923 [main] INFO  liquibase.changelog - Table client created
-21.04.2023 13:05:39.959 [main] INFO  liquibase.changelog - Foreign key constraint added to client (manager_id)
-21.04.2023 13:05:39.960 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create-client-table::Alexey ran successfully in 60ms
-21.04.2023 13:05:39.961 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:39.987 [main] INFO  liquibase.changelog - Table account created
-21.04.2023 13:05:39.988 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_account_table::Alexey ran successfully in 25ms
-21.04.2023 13:05:39.989 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.022 [main] INFO  liquibase.changelog - Table product created
-21.04.2023 13:05:40.023 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_product_table::Alexey ran successfully in 32ms
-21.04.2023 13:05:40.024 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.055 [main] INFO  liquibase.changelog - Table agreement created
-21.04.2023 13:05:40.057 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_agreement_table::Alexey ran successfully in 29ms
-21.04.2023 13:05:40.058 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.095 [main] INFO  liquibase.changelog - Table transaction created
-21.04.2023 13:05:40.096 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_transaction_table::Alexey ran successfully in 35ms
-21.04.2023 13:05:40.097 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.133 [main] INFO  liquibase.changelog - Table token created
-21.04.2023 13:05:40.134 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-tables-changelog.xml::create_token_table::Alexey ran successfully in 35ms
-21.04.2023 13:05:40.136 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.141 [main] INFO  liquibase.changelog - New row inserted into manager
-21.04.2023 13:05:40.143 [main] INFO  liquibase.changelog - New row inserted into manager
-21.04.2023 13:05:40.145 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-managers-data::Alexey ran successfully in 7ms
-21.04.2023 13:05:40.146 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.151 [main] INFO  liquibase.changelog - New row inserted into client
-21.04.2023 13:05:40.153 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey ran successfully in 5ms
-21.04.2023 13:05:40.154 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.160 [main] INFO  liquibase.changelog - New row inserted into account
-21.04.2023 13:05:40.162 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-account-data::Alexey ran successfully in 4ms
-21.04.2023 13:05:40.163 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.168 [main] INFO  liquibase.changelog - New row inserted into product
-21.04.2023 13:05:40.169 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-product-data::Alexey ran successfully in 4ms
-21.04.2023 13:05:40.171 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.176 [main] INFO  liquibase.changelog - New row inserted into agreement
-21.04.2023 13:05:40.178 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-agreement-data::Alexey ran successfully in 5ms
-21.04.2023 13:05:40.179 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.183 [main] INFO  liquibase.changelog - New row inserted into transaction
-21.04.2023 13:05:40.186 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-transaction-data::Alexey ran successfully in 5ms
-21.04.2023 13:05:40.187 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.190 [main] INFO  liquibase.changelog - Sequence my_sequence created
-21.04.2023 13:05:40.191 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-sequence.xml::create_sequence::Alexey ran successfully in 2ms
-21.04.2023 13:05:40.192 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.194 [main] INFO  liquibase - Update command completed successfully.
-21.04.2023 13:05:40.195 [main] INFO  liquibase.executor - Changelog query completed.
-21.04.2023 13:05:40.197 [main] INFO  l.lockservice - Successfully released change log lock
-21.04.2023 13:05:40.269 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-21.04.2023 13:05:40.314 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
-21.04.2023 13:05:40.576 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-21.04.2023 13:05:41.293 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-21.04.2023 13:05:41.301 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-21.04.2023 13:05:41.984 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-21.04.2023 13:05:42.272 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@252da8f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a973b5e, org.springframework.security.web.context.SecurityContextHolderFilter@3594b4b4, org.springframework.security.web.header.HeaderWriterFilter@6212dc7d, org.springframework.security.web.authentication.logout.LogoutFilter@5d8319a7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@c9a8e12, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7105d271, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6225c800, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@429ad94a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@383b3357, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e60b1b, org.springframework.security.web.access.ExceptionTranslationFilter@685dceb8, org.springframework.security.web.access.intercept.AuthorizationFilter@71d92487]
-21.04.2023 13:05:42.642 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-21.04.2023 13:05:42.647 [main] INFO  t.b.BankApplication - Started BankApplication in 5.667 seconds (process running for 6.246)
-21.04.2023 13:06:31.325 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-21.04.2023 13:06:31.325 [http-nio-8081-exec-2] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-21.04.2023 13:06:31.326 [http-nio-8081-exec-2] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
-21.04.2023 13:06:31.533 [http-nio-8081-exec-2] INFO  t.b.a.LoggingAspect - RUN SERVICE:
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+25.04.2023 21:00:17.725 [main] ERROR o.s.b.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'enabled' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'true')]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1752)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at telran.bankapplication.BankApplication.main(BankApplication.java:10)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'enabled' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'true')]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:136)
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:297)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:295)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1748)
+	... 18 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey:
+     Reason: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'enabled' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'true')]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:59)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:75)
+	... 36 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Data truncation: Data too long for column 'enabled' at row 1 [Failed SQL: (1406) INSERT INTO my_db_bank_app.client (id, manager_id, status, tax_code, first_name, last_name, email, password, address, phone, created_at, enabled) VALUES (UUID_TO_BIN('572f52db-fed9-4145-9276-2d0e2acf84fc'), UUID_TO_BIN('158bf4ff-1c1f-42e9-a1bf-3c47d0cdda91'), 'ACTIVE', '78145936', 'Robert', 'Schmidt', 'robschmidt@gmail.com', 'rS134598744', 'Neustrasse 15, 33515 Neuss, Germany', '01529298777', '2023-03-13 16:16:16', 'true')]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:445)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:160)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1270)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1252)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:702)
+	... 56 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'enabled' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:441)
+	... 61 common frames omitted
+25.04.2023 21:01:04.542 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 39120 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+25.04.2023 21:01:04.543 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+25.04.2023 21:01:05.192 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:01:05.193 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+25.04.2023 21:01:05.221 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:01:05.222 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:01:05.223 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:01:05.224 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 JDBC repository interfaces.
+25.04.2023 21:01:05.230 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:01:05.231 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25.04.2023 21:01:05.262 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 3 JPA repository interfaces.
+25.04.2023 21:01:05.813 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+25.04.2023 21:01:05.820 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+25.04.2023 21:01:05.821 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+25.04.2023 21:01:05.899 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+25.04.2023 21:01:05.900 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1321 ms
+25.04.2023 21:01:06.035 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+25.04.2023 21:01:06.274 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@cd5ff55
+25.04.2023 21:01:06.276 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+25.04.2023 21:01:06.680 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 21:01:06.685 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.746 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 21:01:06.757 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.759 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.772 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.775 [main] INFO  l.lockservice - Successfully acquired change log lock
+25.04.2023 21:01:06.811 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.813 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 21:01:06.814 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.817 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.821 [main] WARN  liquibase.changelog - liquibase.statement.core.CreateSequenceStatement is not supported on mysql, but createSequence will still execute
+25.04.2023 21:01:06.844 [main] INFO  liquibase.changelog - New row inserted into client
+25.04.2023 21:01:06.846 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-client-data::Alexey ran successfully in 6ms
+25.04.2023 21:01:06.848 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.849 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.854 [main] INFO  liquibase.changelog - New row inserted into account
+25.04.2023 21:01:06.856 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-account-data::Alexey ran successfully in 5ms
+25.04.2023 21:01:06.858 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.863 [main] INFO  liquibase.changelog - New row inserted into product
+25.04.2023 21:01:06.865 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-product-data::Alexey ran successfully in 5ms
+25.04.2023 21:01:06.867 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.871 [main] INFO  liquibase.changelog - New row inserted into agreement
+25.04.2023 21:01:06.873 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-agreement-data::Alexey ran successfully in 5ms
+25.04.2023 21:01:06.874 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.880 [main] INFO  liquibase.changelog - New row inserted into transaction
+25.04.2023 21:01:06.882 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/insert_test_data_changelog_1.xml::insert-transaction-data::Alexey ran successfully in 4ms
+25.04.2023 21:01:06.883 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.887 [main] INFO  liquibase.changelog - Sequence my_sequence created
+25.04.2023 21:01:06.887 [main] INFO  liquibase.changelog - ChangeSet db/changelog/changes/v0.0.1-SNAPSHOT/create-sequence.xml::create_sequence::Alexey ran successfully in 1ms
+25.04.2023 21:01:06.889 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.891 [main] INFO  liquibase - Update command completed successfully.
+25.04.2023 21:01:06.893 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:01:06.895 [main] INFO  l.lockservice - Successfully released change log lock
+25.04.2023 21:01:06.989 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+25.04.2023 21:01:07.042 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+25.04.2023 21:01:07.356 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+25.04.2023 21:01:08.179 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+25.04.2023 21:01:08.188 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25.04.2023 21:01:09.021 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25.04.2023 21:01:09.739 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f0ea5de, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b0ff869, org.springframework.security.web.context.SecurityContextHolderFilter@6e8627e6, org.springframework.security.web.header.HeaderWriterFilter@22ff53d1, org.springframework.security.web.authentication.logout.LogoutFilter@9cabd07, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f31ccef, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@52c4bf29, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3ae81b53, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a073f4f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5345b68c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4b9da2f0, org.springframework.security.web.access.ExceptionTranslationFilter@4947b8a7, org.springframework.security.web.access.intercept.AuthorizationFilter@350a3df3]
+25.04.2023 21:01:10.246 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+25.04.2023 21:01:10.252 [main] INFO  t.b.BankApplication - Started BankApplication in 6.22 seconds (process running for 6.855)
+25.04.2023 21:18:28.865 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25.04.2023 21:18:28.865 [http-nio-8081-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+25.04.2023 21:18:28.866 [http-nio-8081-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+25.04.2023 21:18:29.083 [http-nio-8081-exec-1] INFO  t.b.a.LoggingAspect - RUN SERVICE:
 SERVICE_METHOD : telran.bankapplication.service.ClientService.signUpClient
-21.04.2023 13:06:47.602 [http-nio-8081-exec-3] INFO  t.b.a.LoggingAspect - RUN SERVICE:
+25.04.2023 21:18:37.308 [http-nio-8081-exec-4] INFO  t.b.a.LoggingAspect - RUN SERVICE:
 SERVICE_METHOD : telran.bankapplication.service.ClientService.enableClient
-21.04.2023 13:07:53.220 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-21.04.2023 13:07:53.222 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
-21.04.2023 13:07:53.226 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+25.04.2023 21:18:37.311 [http-nio-8081-exec-4] INFO  t.b.a.LoggingAspect - RUN SERVICE:
+SERVICE_METHOD : telran.bankapplication.service.ClientService.activeClient
+25.04.2023 21:21:29.644 [http-nio-8081-exec-7] INFO  o.s.a.AbstractOpenApiResource - Init duration for springdoc-openapi is: 215 ms
+25.04.2023 21:22:56.153 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+25.04.2023 21:22:56.155 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+25.04.2023 21:22:56.159 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+25.04.2023 21:26:05.989 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 63692 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+25.04.2023 21:26:05.991 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+25.04.2023 21:26:06.705 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:26:06.706 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+25.04.2023 21:26:06.733 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:26:06.734 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:26:06.735 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:26:06.736 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 JDBC repository interfaces.
+25.04.2023 21:26:06.742 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:26:06.743 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25.04.2023 21:26:06.777 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+25.04.2023 21:26:07.372 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+25.04.2023 21:26:07.380 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+25.04.2023 21:26:07.380 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+25.04.2023 21:26:07.459 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+25.04.2023 21:26:07.460 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1435 ms
+25.04.2023 21:26:07.579 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+25.04.2023 21:26:07.814 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d2def55
+25.04.2023 21:26:07.816 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+25.04.2023 21:26:08.213 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 21:26:08.219 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:26:08.330 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+25.04.2023 21:26:08.366 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+25.04.2023 21:26:08.606 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+25.04.2023 21:26:08.834 [main] INFO  o.h.c.b.TypeSafeActivator - Error calling `jakarta.validation.Validation#buildDefaultValidatorFactory`
+jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+	at jakarta.validation.Validation$GenericBootstrapImpl.configure(Validation.java:291)
+	at jakarta.validation.Validation.buildDefaultValidatorFactory(Validation.java:103)
+	at org.hibernate.cfg.beanvalidation.TypeSafeActivator.getValidatorFactory(TypeSafeActivator.java:479)
+	at org.hibernate.cfg.beanvalidation.TypeSafeActivator.activate(TypeSafeActivator.java:82)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.hibernate.cfg.beanvalidation.BeanValidationIntegrator.integrate(BeanValidationIntegrator.java:137)
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:287)
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1423)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1798)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1748)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at telran.bankapplication.BankApplication.main(BankApplication.java:10)
+25.04.2023 21:26:09.363 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+25.04.2023 21:26:09.371 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25.04.2023 21:26:10.119 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25.04.2023 21:26:10.784 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7574d30b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6723626f, org.springframework.security.web.context.SecurityContextHolderFilter@105c253a, org.springframework.security.web.header.HeaderWriterFilter@4c02f50, org.springframework.security.web.authentication.logout.LogoutFilter@2162e4a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@223095d3, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1990afa2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@411bed55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@546f0f36, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1512a767, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a4aecc3, org.springframework.security.web.access.ExceptionTranslationFilter@7f8f120c, org.springframework.security.web.access.intercept.AuthorizationFilter@3514ea20]
+25.04.2023 21:26:11.217 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+25.04.2023 21:26:11.223 [main] INFO  t.b.BankApplication - Started BankApplication in 5.722 seconds (process running for 6.399)
+25.04.2023 21:27:21.420 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25.04.2023 21:27:21.420 [http-nio-8081-exec-1] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+25.04.2023 21:27:21.421 [http-nio-8081-exec-1] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+25.04.2023 21:27:22.238 [http-nio-8081-exec-10] INFO  o.s.a.AbstractOpenApiResource - Init duration for springdoc-openapi is: 313 ms
+25.04.2023 21:35:10.692 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+25.04.2023 21:35:10.693 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+25.04.2023 21:35:10.698 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+25.04.2023 21:35:53.750 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 9184 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+25.04.2023 21:35:53.752 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+25.04.2023 21:35:54.446 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:35:54.447 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+25.04.2023 21:35:54.474 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:35:54.476 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:35:54.477 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+25.04.2023 21:35:54.477 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 JDBC repository interfaces.
+25.04.2023 21:35:54.484 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25.04.2023 21:35:54.484 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25.04.2023 21:35:54.516 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
+25.04.2023 21:35:55.050 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+25.04.2023 21:35:55.058 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+25.04.2023 21:35:55.058 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+25.04.2023 21:35:55.142 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+25.04.2023 21:35:55.142 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1355 ms
+25.04.2023 21:35:55.286 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+25.04.2023 21:35:55.507 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@379f9555
+25.04.2023 21:35:55.508 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+25.04.2023 21:35:55.915 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+25.04.2023 21:35:55.920 [main] INFO  liquibase.executor - Changelog query completed.
+25.04.2023 21:35:56.034 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+25.04.2023 21:35:56.075 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+25.04.2023 21:35:56.311 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+25.04.2023 21:35:57.042 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+25.04.2023 21:35:57.049 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25.04.2023 21:35:57.810 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25.04.2023 21:35:58.465 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7b4e5982, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@17f216cc, org.springframework.security.web.context.SecurityContextHolderFilter@5216e43c, org.springframework.security.web.header.HeaderWriterFilter@361d56a3, org.springframework.security.web.authentication.logout.LogoutFilter@28a821f9, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@39889671, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@a15e4fd, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@6ab4215d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@411c5fa2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30d4d6fb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@57dee2b9, org.springframework.security.web.access.ExceptionTranslationFilter@5ddd3fbd, org.springframework.security.web.access.intercept.AuthorizationFilter@4115b8a7]
+25.04.2023 21:35:58.926 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+25.04.2023 21:35:58.932 [main] INFO  t.b.BankApplication - Started BankApplication in 5.692 seconds (process running for 6.413)

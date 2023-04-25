@@ -32,6 +32,7 @@
             <column name="first_name">Robert</column>
             <column name="last_name">Schmidt</column>
             <column name="email">robschmidt@gmail.com</column>
+            <column name="password">rS134598744</column>
             <column name="address">Neustrasse 15, 33515 Neuss, Germany</column>
             <column name="phone">01529298777</column>
             <column name="created_at">2023-03-13 16:16:16</column>

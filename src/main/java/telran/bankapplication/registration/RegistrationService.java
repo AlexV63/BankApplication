@@ -70,6 +70,7 @@ public class RegistrationService {
 
             confirmationTokenService.setConfirmedAt(token);
             clientService.enableClient(confirmationToken.getClient().getEmail());
+            clientService.activeClient(confirmationToken.getClient().getEmail());
             return "confirmed";
     }
 
