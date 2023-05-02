@@ -40,7 +40,7 @@ public class RegistrationService {
             System.out.println("ELSE");
             Client client = new Client(
                     request.getFirstName(),
-                    request.getLastName(),
+                    request.getName(),
                     request.getEmail(),
                     request.getPassword()
             );

@@ -2,7 +2,6 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.apache.commons.lang3.builder.ToStringExclude;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import telran.bankapplication.entity.enums.ClientStatus;
@@ -33,7 +32,7 @@ public class Client implements UserDetails {
     private String firstName;
 
     @Column(name = "last_name", nullable = true, length = 50)
-    private String lastName;
+    private String name;
 
     @Column(name = "email", nullable = true, length = 60)
     private String email;
@@ -70,7 +69,7 @@ public class Client implements UserDetails {
     public Client(String firstName, String lastName, String email, String password) {
         this.id= UUID.randomUUID();
         this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = lastName;
         this.email = email;
         this.password = password;
         this.status = ClientStatus.PENDING;
@@ -96,7 +95,7 @@ public class Client implements UserDetails {
 
     @Override
     public String getUsername() {
-        return lastName;
+        return name;
     }
 
     @Override

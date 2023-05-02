@@ -22,15 +22,23 @@ class ClientServiceTest {
             new ConfirmationTokenService(confirmationTokenRepository)) ;
 
     @Test
-    void findClientByName() {
+    void findClientByEmail() {
         Mockito.when(clientRepository.findByEmail("")).thenReturn(Optional.of(new Client()));
-        clientService.findClientByName("");
+        clientService.findClientByEmail("");
         Mockito.verify(clientRepository, Mockito.times(1))
                 .findByEmail("");
     }
 
     @Test
-    void testExceptionDoesManagerNotExist() {
+    void findClientByName() {
+        Mockito.when(clientRepository.findByName("")).thenReturn(Optional.of(new Client()));
+        clientService.findClientByName("");
+        Mockito.verify(clientRepository, Mockito.times(1))
+                .findByName("");
+    }
+
+    @Test
+    void testExceptionDoesClientNotExist() {
         IllegalStateException illegalStateException = Assertions.assertThrows(
                 IllegalStateException.class, ()-> {clientService.findClientByName("Mike");});
         Assertions.assertEquals("Client with name: Mike doesn't exist in database", illegalStateException.getMessage());

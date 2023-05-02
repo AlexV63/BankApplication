@@ -11,7 +11,12 @@ import telran.bankapplication.service.ClientService;
 public class ClientController {
     private final ClientService clientService;
 
-    @GetMapping(path = "{name}")
+    @GetMapping(path = "email/{email}")
+    public ClientDTO getClientEmail(@PathVariable("email") String email) {
+        return clientService.findClientByEmail(email);
+    }
+
+    @GetMapping(path = "name/{name}")
     public ClientDTO getClientName(@PathVariable("name") String name) {
         return clientService.findClientByName(name);
     }

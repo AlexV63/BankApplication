@@ -14,6 +14,7 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 public interface ClientRepository extends JpaRepository<Client, UUID> {
     Optional<Client> findByEmail(String email);
+    Optional<Client> findByName(String lastName);
     @Transactional
     @Modifying
     @Query("UPDATE Client a SET a.enabled = TRUE WHERE a.email = ?1")

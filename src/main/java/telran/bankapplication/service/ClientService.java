@@ -14,9 +14,7 @@ import telran.bankapplication.mapper.ClientMapper;
 import telran.bankapplication.registration.token.ConfirmationToken;
 import telran.bankapplication.registration.token.ConfirmationTokenService;
 import telran.bankapplication.repository.ClientRepository;
-import telran.bankapplication.repository.ManagerRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -31,9 +29,14 @@ public class ClientService implements UserDetailsService {
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final ConfirmationTokenService confirmationTokenService;
 
-    public ClientDTO findClientByName(String email){
+    public ClientDTO findClientByEmail(String email){
         return clientMapper.toDTO(clientRepository.findByEmail(email)
-                .orElseThrow(() -> new IllegalStateException("Client with name: " + email + " doesn't exist in database")));
+                .orElseThrow(() -> new IllegalStateException("Client with email: " + email + " doesn't exist in database")));
+    }
+
+    public ClientDTO findClientByName(String name){
+        return clientMapper.toDTO(clientRepository.findByName(name)
+                .orElseThrow(() -> new IllegalStateException("Client with name: " + name + " doesn't exist in database")));
     }
 
     public List<ClientDTO> getClients() {
