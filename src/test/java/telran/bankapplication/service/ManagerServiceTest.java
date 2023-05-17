@@ -10,12 +10,13 @@ import telran.bankapplication.mapper.ManagerMapper;
 import telran.bankapplication.repository.ManagerRepository;
 
 import java.util.Optional;
+import java.util.UUID;
 
 class ManagerServiceTest {
 
     ManagerRepository managerRepository = Mockito.mock(ManagerRepository.class);
     ManagerService managerService = new ManagerService(managerRepository, Mockito.mock(ManagerMapper.class));
-
+    UUID uuid = UUID.randomUUID();
     @Test
     void findManagerByName() {
         Mockito.when(managerRepository.findByName("")).thenReturn(Optional.of(new Manager()));
@@ -33,16 +34,16 @@ class ManagerServiceTest {
 
     @Test
     void findManagerById() {
-        Mockito.when(managerRepository.findById("")).thenReturn(Optional.of(new Manager()));
-        managerService.findManagerById("");
+        Mockito.when(managerRepository.findById(uuid)).thenReturn(Optional.of(new Manager()));
+        managerService.findManagerById(uuid);
         Mockito.verify(managerRepository, Mockito.times(1))
-                .findById("");
+                .findById(uuid);
     }
 
     @Test
     void testExceptionDoesManagerWithIdNotExist() {
         ManagerRequestException managerRequestException = Assertions.assertThrows(
-                ManagerRequestException.class, ()-> {managerService.findManagerById("777333");});
-        Assertions.assertEquals("Manager with id: 777333 doesn't exist in database", managerRequestException.getMessage());
+                ManagerRequestException.class, ()-> {managerService.findManagerById(uuid);});
+        Assertions.assertEquals("Manager with id: " + uuid + " doesn't exist in database", managerRequestException.getMessage());
     }
 }
