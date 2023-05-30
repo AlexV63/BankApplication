@@ -1,15 +1,14 @@
-package telran.bankapplication.registration;
+package telran.bankapplication.service;
 
 import telran.bankapplication.repository.ClientRepository;
 import telran.bankapplication.email.EmailSender;
 import telran.bankapplication.entity.Client;
-import telran.bankapplication.registration.token.ConfirmationToken;
-import telran.bankapplication.registration.token.ConfirmationTokenService;
+import telran.bankapplication.entity.ConfirmationToken;
+import telran.bankapplication.security.EmailCheck;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import telran.bankapplication.repository.ManagerRepository;
-import telran.bankapplication.service.ClientService;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -19,7 +18,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class RegistrationService {
 
-    private final EmailValidator emailValidator;
+    private final EmailCheck emailValidator;
     private final ClientService clientService;
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
@@ -34,10 +33,8 @@ public class RegistrationService {
         String token;
         Optional<Client> existingUser = clientRepository.findByEmail(request.getEmail());
         if (existingUser.isPresent()) {
-            System.out.println("IF");
             token = clientService.signUpClient(existingUser.get());
         } else {
-            System.out.println("ELSE");
             Client client = new Client(
                     request.getFirstName(),
                     request.getName(),
@@ -45,10 +42,8 @@ public class RegistrationService {
                     request.getPassword()
             );
             client.setManager(managerRepository.findById(manager_id)
-                    .orElseThrow(()->new IllegalStateException("Manager not exists")));
+                    .orElseThrow(() -> new IllegalStateException("Manager not exists")));
 
-            System.out.println(client);
-            System.out.println(request);
             token = clientService.signUpClient(client);
 
         }
@@ -58,20 +53,20 @@ public class RegistrationService {
     }
 
     @Transactional
-        public String confirmToken(String token) {
-            ConfirmationToken confirmationToken = confirmationTokenService.getToken(token).orElseThrow(() -> new IllegalStateException("token not found"));
-            if (confirmationToken.getConfirmedAt() !=null){
-                throw new IllegalStateException("email already confirmed");
+    public String confirmToken(String token) {
+        ConfirmationToken confirmationToken = confirmationTokenService.getToken(token).orElseThrow(() -> new IllegalStateException("token not found"));
+        if (confirmationToken.getConfirmedAt() != null) {
+            throw new IllegalStateException("email already confirmed");
         }
-            LocalDateTime expiredAt = confirmationToken.getExpiresAt();
-            if (expiredAt.isBefore(LocalDateTime.now())){
-                throw new IllegalStateException("token expired");
-            }
+        LocalDateTime expiredAt = confirmationToken.getExpiresAt();
+        if (expiredAt.isBefore(LocalDateTime.now())) {
+            throw new IllegalStateException("token expired");
+        }
 
-            confirmationTokenService.setConfirmedAt(token);
-            clientService.enableClient(confirmationToken.getClient().getEmail());
-            clientService.activeClient(confirmationToken.getClient().getEmail());
-            return "confirmed";
+        confirmationTokenService.setConfirmedAt(token);
+        clientService.enableClient(confirmationToken.getClient().getEmail());
+        clientService.activeClient(confirmationToken.getClient().getEmail());
+        return "confirmed";
     }
 
     private String buildEmail(String name, String link) {

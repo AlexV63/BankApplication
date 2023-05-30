@@ -1,4 +1,4 @@
-package telran.bankapplication.registration.token;
+package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

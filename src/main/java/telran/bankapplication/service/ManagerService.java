@@ -7,6 +7,7 @@ import telran.bankapplication.exception.ManagerRequestException;
 import telran.bankapplication.mapper.ManagerMapper;
 import telran.bankapplication.repository.ManagerRepository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -24,5 +25,8 @@ public class ManagerService {
                 .orElseThrow(() -> new ManagerRequestException("Manager with id: " + id + " doesn't exist in database")));
     }
 
+    public List<ManagerDTO> getAllManagers(){
+        return managerMapper.listToDTO(managerRepository.findAll());
+    }
 
 }

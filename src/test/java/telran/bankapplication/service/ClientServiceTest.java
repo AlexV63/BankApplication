@@ -6,8 +6,7 @@ import org.mockito.Mockito;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import telran.bankapplication.entity.Client;
 import telran.bankapplication.mapper.ClientMapper;
-import telran.bankapplication.registration.token.ConfirmationTokenRepository;
-import telran.bankapplication.registration.token.ConfirmationTokenService;
+import telran.bankapplication.repository.ConfirmationTokenRepository;
 import telran.bankapplication.repository.ClientRepository;
 
 import java.util.Optional;

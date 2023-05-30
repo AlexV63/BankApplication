@@ -2,7 +2,7 @@
 14.05.2023 17:45:09.111 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
 14.05.2023 17:45:10.115 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
 14.05.2023 17:45:10.117 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-14.05.2023 17:45:10.157 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+14.05.2023 17:45:10.157 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:45:10.158 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:45:10.159 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:45:10.160 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 0 JDBC repository interfaces.
@@ -48,7 +48,7 @@ END OF REQUEST
 14.05.2023 17:50:53.730 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
 14.05.2023 17:50:54.725 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
 14.05.2023 17:50:54.726 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-14.05.2023 17:50:54.756 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+14.05.2023 17:50:54.756 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:50:54.758 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:50:54.759 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:50:54.760 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 0 JDBC repository interfaces.
@@ -146,7 +146,7 @@ Caused by: java.net.ConnectException: Connection refused: connect
 14.05.2023 17:59:47.021 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
 14.05.2023 17:59:48.091 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
 14.05.2023 17:59:48.092 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-14.05.2023 17:59:48.121 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.registration.token.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+14.05.2023 17:59:48.121 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:59:48.123 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:59:48.124 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
 14.05.2023 17:59:48.124 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 0 JDBC repository interfaces.
@@ -240,3 +240,238 @@ Caused by: java.net.ConnectException: Connection refused: connect
 14.05.2023 18:36:25.713 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 14.05.2023 18:36:25.717 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
 14.05.2023 18:36:25.722 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+30.05.2023 13:04:42.264 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 103532 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+30.05.2023 13:04:42.266 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+30.05.2023 13:04:43.593 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+30.05.2023 13:04:43.594 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+30.05.2023 13:04:43.629 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+30.05.2023 13:04:43.631 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+30.05.2023 13:04:43.632 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+30.05.2023 13:04:43.633 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 JDBC repository interfaces.
+30.05.2023 13:04:43.643 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+30.05.2023 13:04:43.658 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+30.05.2023 13:04:43.702 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
+30.05.2023 13:04:44.402 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+30.05.2023 13:04:44.413 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+30.05.2023 13:04:44.413 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+30.05.2023 13:04:44.516 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+30.05.2023 13:04:44.517 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2210 ms
+30.05.2023 13:04:44.821 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+30.05.2023 13:04:45.179 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c8e8fed
+30.05.2023 13:04:45.181 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+30.05.2023 13:04:45.747 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+30.05.2023 13:04:45.757 [main] INFO  liquibase.executor - Changelog query completed.
+30.05.2023 13:04:45.898 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+30.05.2023 13:04:45.956 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+30.05.2023 13:04:46.263 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+30.05.2023 13:04:47.146 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+30.05.2023 13:04:47.156 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+30.05.2023 13:04:47.997 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+30.05.2023 13:04:48.834 [main] INFO  o.s.b.a.e.w.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+30.05.2023 13:04:48.883 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d7c76af, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cfadadc, org.springframework.security.web.context.SecurityContextHolderFilter@64e41da0, org.springframework.security.web.header.HeaderWriterFilter@5b1378cf, org.springframework.security.web.authentication.logout.LogoutFilter@5eff875a, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3015fc1b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@167650f8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4310007c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7fa1c05f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19a5cfb8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3c247c8d, org.springframework.security.web.access.ExceptionTranslationFilter@664e8bb7, org.springframework.security.web.access.intercept.AuthorizationFilter@7f83cc90]
+30.05.2023 13:04:49.545 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+30.05.2023 13:04:49.557 [main] INFO  t.b.BankApplication - Started BankApplication in 7.837 seconds (process running for 9.416)
+30.05.2023 13:04:50.132 [RMI TCP Connection(5)-192.168.2.104] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+30.05.2023 13:04:50.133 [RMI TCP Connection(5)-192.168.2.104] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+30.05.2023 13:04:50.134 [RMI TCP Connection(5)-192.168.2.104] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+30.05.2023 13:04:50.171 [RMI TCP Connection(4)-192.168.2.104] WARN  o.s.b.a.m.MailHealthIndicator - Mail health check failed
+com.sun.mail.util.MailConnectException: Couldn't connect to host, port: localhost, 1025; timeout -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2259)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:754)
+	at jakarta.mail.Service.connect(Service.java:342)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.testConnection(JavaMailSenderImpl.java:398)
+	at org.springframework.boot.actuate.mail.MailHealthIndicator.doHealthCheck(MailHealthIndicator.java:42)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:82)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:76)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:66)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:811)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/java.net.Socket.connect(Socket.java:583)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:357)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:236)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2209)
+	... 45 common frames omitted
+30.05.2023 13:09:22.086 [http-nio-8081-exec-1] INFO  t.b.a.LoggingAspect - NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8081/api/v1/manager/all
+HTTP_METHOD : GET
+CONTROLLER_METHOD : telran.bankapplication.controller.ManagerController.getAllManagers
+30.05.2023 13:09:22.087 [http-nio-8081-exec-1] INFO  t.b.a.LoggingAspect - RUN SERVICE:
+SERVICE_METHOD : telran.bankapplication.service.ManagerService.getAllManagers
+30.05.2023 13:09:22.182 [http-nio-8081-exec-1] INFO  t.b.a.LoggingAspect - 
+Return value: [ManagerDTO(firstName=Joerg, lastName=Bluhm, status=ACTIVE, createdAt=2023-03-13T10:00:00.000+01:00, updatedAt=2023-03-13T10:00:00.000+01:00), ManagerDTO(firstName=Frank, lastName=Zehlius, status=PENDING, createdAt=2023-03-13T11:00:00.000+01:00, updatedAt=2023-03-13T11:00:00.000+01:00)]
+END OF REQUEST
+30.05.2023 13:10:16.334 [http-nio-8081-exec-5] INFO  t.b.a.LoggingAspect - NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8081/api/v1/manager/all
+HTTP_METHOD : GET
+CONTROLLER_METHOD : telran.bankapplication.controller.ManagerController.getAllManagers
+30.05.2023 13:10:16.334 [http-nio-8081-exec-5] INFO  t.b.a.LoggingAspect - RUN SERVICE:
+SERVICE_METHOD : telran.bankapplication.service.ManagerService.getAllManagers
+30.05.2023 13:10:16.338 [http-nio-8081-exec-5] INFO  t.b.a.LoggingAspect - 
+Return value: [ManagerDTO(firstName=Joerg, lastName=Bluhm, status=ACTIVE, createdAt=2023-03-13T10:00:00.000+01:00, updatedAt=2023-03-13T10:00:00.000+01:00), ManagerDTO(firstName=Frank, lastName=Zehlius, status=PENDING, createdAt=2023-03-13T11:00:00.000+01:00, updatedAt=2023-03-13T11:00:00.000+01:00)]
+END OF REQUEST
+30.05.2023 13:10:26.749 [http-nio-8081-exec-6] INFO  t.b.a.LoggingAspect - NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8081/api/v1/manager/all
+HTTP_METHOD : GET
+CONTROLLER_METHOD : telran.bankapplication.controller.ManagerController.getAllManagers
+30.05.2023 13:10:26.749 [http-nio-8081-exec-6] INFO  t.b.a.LoggingAspect - RUN SERVICE:
+SERVICE_METHOD : telran.bankapplication.service.ManagerService.getAllManagers
+30.05.2023 13:10:26.755 [http-nio-8081-exec-6] INFO  t.b.a.LoggingAspect - 
+Return value: [ManagerDTO(firstName=Joerg, lastName=Bluhm, status=ACTIVE, createdAt=2023-03-13T10:00:00.000+01:00, updatedAt=2023-03-13T10:00:00.000+01:00), ManagerDTO(firstName=Frank, lastName=Zehlius, status=PENDING, createdAt=2023-03-13T11:00:00.000+01:00, updatedAt=2023-03-13T11:00:00.000+01:00)]
+END OF REQUEST
+30.05.2023 13:18:31.181 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+30.05.2023 13:18:31.183 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+30.05.2023 13:18:31.189 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+30.05.2023 13:18:35.994 [main] INFO  t.b.BankApplication - Starting BankApplication using Java 18.0.2.1 with PID 55656 (C:\Users\Boss\IdeaProjects\BankApplication\target\classes started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+30.05.2023 13:18:35.996 [main] INFO  t.b.BankApplication - No active profile set, falling back to 1 default profile: "default"
+30.05.2023 13:18:36.911 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+30.05.2023 13:18:36.912 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+30.05.2023 13:18:36.941 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ClientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+30.05.2023 13:18:36.942 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ConfirmationTokenRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+30.05.2023 13:18:36.943 [main] INFO  o.s.d.r.c.RepositoryConfigurationExtensionSupport - Spring Data JDBC - Could not safely identify store assignment for repository candidate interface telran.bankapplication.repository.ManagerRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+30.05.2023 13:18:36.944 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 JDBC repository interfaces.
+30.05.2023 13:18:36.951 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+30.05.2023 13:18:36.952 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+30.05.2023 13:18:36.984 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
+30.05.2023 13:18:37.594 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+30.05.2023 13:18:37.603 [main] INFO  o.a.c.c.StandardService - Starting service [Tomcat]
+30.05.2023 13:18:37.603 [main] INFO  o.a.c.c.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+30.05.2023 13:18:37.698 [main] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+30.05.2023 13:18:37.698 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1664 ms
+30.05.2023 13:18:37.948 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+30.05.2023 13:18:38.178 [main] INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5df7a065
+30.05.2023 13:18:38.185 [main] INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+30.05.2023 13:18:38.595 [main] INFO  liquibase.changelog - Reading from my_db_bank_app.DATABASECHANGELOG
+30.05.2023 13:18:38.601 [main] INFO  liquibase.executor - Changelog query completed.
+30.05.2023 13:18:38.716 [main] INFO  o.h.j.i.u.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+30.05.2023 13:18:38.763 [main] INFO  o.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+30.05.2023 13:18:39.048 [main] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+30.05.2023 13:18:39.860 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+30.05.2023 13:18:39.869 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+30.05.2023 13:18:40.674 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+30.05.2023 13:18:41.482 [main] INFO  o.s.b.a.e.w.EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+30.05.2023 13:18:41.530 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54b45cfe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@462ccaa8, org.springframework.security.web.context.SecurityContextHolderFilter@47e82067, org.springframework.security.web.header.HeaderWriterFilter@2e949007, org.springframework.security.web.authentication.logout.LogoutFilter@48c63936, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@511936ad, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@68bbd5c2, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5e18309e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3990d58e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76e51181, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fbfd6ed, org.springframework.security.web.access.ExceptionTranslationFilter@1928dc66, org.springframework.security.web.access.intercept.AuthorizationFilter@77bca6d6]
+30.05.2023 13:18:42.130 [main] INFO  o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+30.05.2023 13:18:42.142 [main] INFO  t.b.BankApplication - Started BankApplication in 6.695 seconds (process running for 7.247)
+30.05.2023 13:18:42.664 [RMI TCP Connection(2)-192.168.2.104] INFO  o.a.c.c.C.[.[.[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+30.05.2023 13:18:42.664 [RMI TCP Connection(2)-192.168.2.104] INFO  o.s.w.s.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+30.05.2023 13:18:42.665 [RMI TCP Connection(2)-192.168.2.104] INFO  o.s.w.s.DispatcherServlet - Completed initialization in 1 ms
+30.05.2023 13:18:42.696 [RMI TCP Connection(1)-192.168.2.104] WARN  o.s.b.a.m.MailHealthIndicator - Mail health check failed
+com.sun.mail.util.MailConnectException: Couldn't connect to host, port: localhost, 1025; timeout -1
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2259)
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:754)
+	at jakarta.mail.Service.connect(Service.java:342)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.connectTransport(JavaMailSenderImpl.java:518)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.testConnection(JavaMailSenderImpl.java:398)
+	at org.springframework.boot.actuate.mail.MailHealthIndicator.doHealthCheck(MailHealthIndicator.java:42)
+	at org.springframework.boot.actuate.health.AbstractHealthIndicator.health(AbstractHealthIndicator.java:82)
+	at org.springframework.boot.actuate.health.HealthIndicator.getHealth(HealthIndicator.java:37)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:82)
+	at org.springframework.boot.actuate.health.HealthEndpoint.getHealth(HealthEndpoint.java:41)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getLoggedHealth(HealthEndpointSupport.java:172)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:145)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getAggregateContribution(HealthEndpointSupport.java:156)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getContribution(HealthEndpointSupport.java:141)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:110)
+	at org.springframework.boot.actuate.health.HealthEndpointSupport.getHealth(HealthEndpointSupport.java:81)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:76)
+	at org.springframework.boot.actuate.health.HealthEndpoint.health(HealthEndpoint.java:66)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+	at org.springframework.boot.actuate.endpoint.invoke.reflect.ReflectiveOperationInvoker.invoke(ReflectiveOperationInvoker.java:74)
+	at org.springframework.boot.actuate.endpoint.annotation.AbstractDiscoveredOperation.invoke(AbstractDiscoveredOperation.java:60)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:124)
+	at org.springframework.boot.actuate.endpoint.jmx.EndpointMBean.invoke(EndpointMBean.java:97)
+	at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:811)
+	at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doOperation(RMIConnectionImpl.java:1472)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl$PrivilegedOperation.run(RMIConnectionImpl.java:1310)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.doPrivilegedOperation(RMIConnectionImpl.java:1405)
+	at java.management.rmi/javax.management.remote.rmi.RMIConnectionImpl.invoke(RMIConnectionImpl.java:829)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(UnicastServerRef.java:360)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:200)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Transport.java:197)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:712)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Transport.java:196)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(TCPTransport.java:598)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(TCPTransport.java:844)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(TCPTransport.java:721)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(TCPTransport.java:720)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:585)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:633)
+	at java.base/java.net.Socket.connect(Socket.java:583)
+	at com.sun.mail.util.SocketFetcher.createSocket(SocketFetcher.java:357)
+	at com.sun.mail.util.SocketFetcher.getSocket(SocketFetcher.java:236)
+	at com.sun.mail.smtp.SMTPTransport.openServer(SMTPTransport.java:2209)
+	... 45 common frames omitted
+30.05.2023 13:19:35.095 [http-nio-8081-exec-1] INFO  t.b.a.LoggingAspect - NEW REQUEST:
+IP : 0:0:0:0:0:0:0:1
+URL : http://localhost:8081/api/v1/clients/all
+HTTP_METHOD : GET
+CONTROLLER_METHOD : telran.bankapplication.controller.ClientController.getClients
+30.05.2023 13:19:35.095 [http-nio-8081-exec-1] INFO  t.b.a.LoggingAspect - RUN SERVICE:
+SERVICE_METHOD : telran.bankapplication.service.ClientService.getClients
+30.05.2023 13:19:35.240 [http-nio-8081-exec-1] INFO  t.b.a.LoggingAspect - 
+Return value: [ClientDTO(firstName=Robert, lastName=null, email=robschmidt@gmail.com, taxCode=78145936, status=ACTIVE, createdAt=2023-03-13T16:16:16.000+01:00, updatedAt=null), ClientDTO(firstName=Anton, lastName=null, email=abel@mail.ru, taxCode=null, status=ACTIVE, createdAt=null, updatedAt=null)]
+END OF REQUEST
+30.05.2023 13:28:01.389 [http-nio-8081-exec-3] INFO  o.s.a.AbstractOpenApiResource - Init duration for springdoc-openapi is: 384 ms
+30.05.2023 13:56:54.463 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+30.05.2023 13:56:54.466 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+30.05.2023 13:56:54.471 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.

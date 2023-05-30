@@ -1,13 +1,14 @@
-package telran.bankapplication.registration.token;
+package telran.bankapplication.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import telran.bankapplication.entity.Client;
+import telran.bankapplication.entity.ConfirmationToken;
+import telran.bankapplication.repository.ConfirmationTokenRepository;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 @AllArgsConstructor
