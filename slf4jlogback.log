@@ -96,3 +96,31 @@ Caused by: java.net.ConnectException: Connection refused: connect
 06.06.2023 10:39:03.639 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 06.06.2023 10:39:03.642 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
 06.06.2023 10:39:03.649 [SpringApplicationShutdownHook] INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+06.06.2023 11:11:20.625 [main] INFO  t.b.c.ClientControllerTest - Starting ClientControllerTest using Java 18.0.2.1 with PID 57468 (started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+06.06.2023 11:11:20.627 [main] INFO  t.b.c.ClientControllerTest - No active profile set, falling back to 1 default profile: "default"
+06.06.2023 11:11:23.855 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@175ac243, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51a719e7, org.springframework.security.web.context.SecurityContextHolderFilter@269c7104, org.springframework.security.web.header.HeaderWriterFilter@4df0d9f8, org.springframework.security.web.csrf.CsrfFilter@42b4df5a, org.springframework.security.web.authentication.logout.LogoutFilter@3e9fb485, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@48106381, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7e4ac598, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@fd4459b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7db47323, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@627bcd7e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26f75d9c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1073c664, org.springframework.security.web.access.ExceptionTranslationFilter@2d5ae78e, org.springframework.security.web.access.intercept.AuthorizationFilter@59371066]
+06.06.2023 11:11:23.885 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e18eaf62-e196-4e82-81ae-a15118a2e2c5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+06.06.2023 11:11:23.936 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+06.06.2023 11:11:23.937 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+06.06.2023 11:11:23.938 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+06.06.2023 11:11:23.965 [main] INFO  t.b.c.ClientControllerTest - Started ClientControllerTest in 3.899 seconds (process running for 5.078)
+06.06.2023 11:11:24.226 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [telran.bankapplication.controller.ManagerControllerTest]: ManagerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+06.06.2023 11:11:24.234 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration telran.bankapplication.BankApplication for test class telran.bankapplication.controller.ManagerControllerTest
+06.06.2023 11:11:24.280 [main] INFO  t.b.c.ManagerControllerTest - Starting ManagerControllerTest using Java 18.0.2.1 with PID 57468 (started by Boss in C:\Users\Boss\IdeaProjects\BankApplication)
+06.06.2023 11:11:24.281 [main] INFO  t.b.c.ManagerControllerTest - No active profile set, falling back to 1 default profile: "default"
+06.06.2023 11:11:25.050 [main] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: f098b127-cfb5-4bf4-90c2-88634ac22eb2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+06.06.2023 11:11:25.117 [main] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4f2d8175, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44618fe6, org.springframework.security.web.context.SecurityContextHolderFilter@6c56fff, org.springframework.security.web.header.HeaderWriterFilter@28d56028, org.springframework.security.web.csrf.CsrfFilter@5e3cb58e, org.springframework.security.web.authentication.logout.LogoutFilter@6f976c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@72d16d6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6109d880, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2b15ba1a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7b0525a8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3dee3a6c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62de20d3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@796fe2b5, org.springframework.security.web.access.ExceptionTranslationFilter@18f8e2e0, org.springframework.security.web.access.intercept.AuthorizationFilter@3cc6f036]
+06.06.2023 11:11:25.123 [main] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+06.06.2023 11:11:25.124 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+06.06.2023 11:11:25.126 [main] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 0 ms
+06.06.2023 11:11:25.135 [main] INFO  t.b.c.ManagerControllerTest - Started ManagerControllerTest in 0.893 seconds (process running for 6.247)
