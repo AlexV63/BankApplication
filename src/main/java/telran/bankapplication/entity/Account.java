@@ -2,7 +2,6 @@ package telran.bankapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 import telran.bankapplication.entity.enums.AccountStatus;
 import telran.bankapplication.entity.enums.AccountType;
 import telran.bankapplication.entity.enums.CurrencyType;

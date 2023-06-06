@@ -22,7 +22,7 @@ import java.util.Optional;
 public class ClientService implements UserDetailsService {
     private final ClientRepository clientRepository;
     private final ClientMapper clientMapper;
-    private final static String USER_NOT_FOUND_MSG =
+    private static final String USER_NOT_FOUND_MSG =
             "user with email %s not found";
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final ConfirmationTokenService confirmationTokenService;
