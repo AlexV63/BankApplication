@@ -4,10 +4,8 @@ services:
     image: mysql:latest
     restart: always
     environment:
-#      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 1403
       MYSQL_DATABASE: my_db_bank_app
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1403
     volumes:
       - ./data:/var/lib/mysql
     ports:
